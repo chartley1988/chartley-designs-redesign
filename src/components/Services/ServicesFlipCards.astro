@@ -9,7 +9,7 @@ import pergola from "../../assets/images/pergola.webp";
 import type { ImageMetadata } from "astro";
 
 import { getCollection, getEntry } from 'astro:content';
-const content = await getCollection('services');
+const content = await getCollection('projects');
 
 interface Props {
 	cardSize?: {

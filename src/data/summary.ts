@@ -1,6 +1,8 @@
+import logo from "../assets/images/pen.svg"
+
 interface summaryType {
 	siteName: string;
-	url: string;
+	url: URL;
 	logoURL: string;
 	description: string;
 	twitterURL?: string;
@@ -9,11 +11,11 @@ interface summaryType {
 }
 
 const summary = {
-	siteName: "Tamarack Productions",
+	siteName: "Chartley Designs",
 	url: "https://chartley-template.vercel.app/",
-	logoURL: "/favicon.svg",
+	logoURL: logo.src,
 	description:
-		"A company devoted to building beautiful additions to your home. From decks, fences, pergolas, and more. Call now for a free quote!",
+		"Custom websites, both beautiful and functional. Optimized for SEO and speed.",
 };
 
 export default summary;

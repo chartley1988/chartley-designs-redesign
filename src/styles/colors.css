@@ -1,13 +1,15 @@
 /* TODO: Add modifier for saturation. Shouldn't force vibrant colours on the theme */
 :root {
-	--primary-hue: 220;
-	--primary-saturation: 40%;
-	--primary-lightness: 50%;
+	--primary-hue: 90;
+	--primary-saturation: 34%;
+	--primary-lightness: 63%;
 
 	/* 
     Replace These values for custom accent colour, otherwise a default complimentary one is assigned. 
     */
-	--accent-hue: calc(var(--primary-hue) + 180);
+	--accent-hue: 47;
+	--accent-saturation: 97%;
+	--accent-lightness: 63%;
 }
 
 .light-theme {
@@ -28,8 +30,8 @@
 
 	--accent: hsl(
 		var(--accent-hue),
-		var(--primary-saturation),
-		var(--primary-lightness)
+		var(--accent-saturation),
+		var(--accent-lightness)
 	);
 
 	--nickel-1: #fdfdfc;
@@ -68,8 +70,8 @@
 
 	--accent: hsl(
 		var(--accent-hue),
-		var(--primary-saturation),
-		var(--primary-lightness)
+		var(--accent-saturation),
+		var(--accent-lightness)
 	);
 
 	--nickel-1: #111110;
