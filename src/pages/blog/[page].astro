@@ -21,9 +21,7 @@ export async function getStaticPaths() {
   let pages = Math.floor(allPosts.length / quantityDisplayed);
   if (pages >= 1) pages = 1;
 
-  type pageArrayType = (typeof allPosts)[];
-
-  const pageArray: pageArrayType = [];
+	type pageArrayType = (typeof allPosts)[];
 
   for (let i = 0; i < allPosts.length; i += quantityDisplayed) {
     const chunk = allPosts.slice(i, i + quantityDisplayed);

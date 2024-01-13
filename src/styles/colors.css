@@ -110,8 +110,8 @@
 
 	--accent: hsl(
 		var(--accent-hue),
-		var(--primary-saturation),
-		var(--primary-lightness)
+		var(--accemt-saturation),
+		var(--accemt-lightness)
 	);
 
 	.no-js {
