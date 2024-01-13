@@ -18,6 +18,8 @@ export async function getStaticPaths() {
 
   type pageArrayType = (typeof allPosts)[];
 
+  const pageArray: pageArrayType = [];
+
   for (let i = 0; i < allPosts.length; i += quantityDisplayed) {
     const chunk = allPosts.slice(i, i + quantityDisplayed);
     pageArray.push(chunk);

@@ -13,8 +13,6 @@ that is easy to change to fit the needs of the customer. For the developer,
 the most important thing is to get out of the way and make implementing the
 content the most important thing.
 
-## Recommended Approach
-
 1. Fill out your [Site Summary](Site%20Summary.md) first. This section contains
    side wide metadata. Configure things like the name of your site, choose logo
    file, description of site, etc.
@@ -45,5 +43,5 @@ content the most important thing.
 - [Configure Theme](Configure%20Theme.md)
 - [Configure Layout](Configure%20Layout.md)
 - [Customize Index Page](Customize%20Index%20Page.md)
-- [Component Index](Components.md)
-- [Writing Content](Writing%20Content.md)
+- [Component Index](./Components.md)
+- [Writing Content](./Writing%20Content.md)
