@@ -2,133 +2,125 @@
 import { Icon } from "astro-icon";
 
 type menuOptionsType = {
-	title: string;
-	path: string;
-	badge?: true;
-	children?: menuOptionsType[];
+  title: string;
+  path: string;
+  badge?: true;
+  children?: menuOptionsType[];
 };
 interface Props {
-	menuOptions: menuOptionsType[];
+  menuOptions: menuOptionsType[];
 }
 
 const { menuOptions } = Astro.props;
 ---
 
 <div
-	class='container'
-	id='desktop-menu'
-	data-options={JSON.stringify(menuOptions)}
+  class="container"
+  id="desktop-menu"
+  data-options={JSON.stringify(menuOptions)}
 >
-	<menu>
-		{
-			menuOptions.map((item, index) => {
-				return item.children ? (
-					<li>
-						<button
-							class='link'
-							id={`${item.title}-dropdown-desktop`}
-						>
-							{item.title}
-							<Icon name='fluent:chevron-down-12-filled' />
-						</button>
+  <menu>
+    {
+      menuOptions.map((item, index) => {
+        return item.children ? (
+          <li>
+            <button class="link" id={`${item.title}-dropdown-desktop`}>
+              {item.title}
+              <Icon name="fluent:chevron-down-12-filled" />
+            </button>
 
-						<menu
-							class='submenu hidden desktop-dropdown'
-							id={`${item.title}-menu-desktop`}
-						>
-							{item.children.map((item) => {
-								return (
-									<li>
-										<a
-											href={item.path}
-											class='link'
-										>
-											{item.title}
-										</a>
-									</li>
-								);
-							})}
-						</menu>
-					</li>
-				) : (
-					<li>
-						<a
-							href={item.path}
-							class='link'
-						>
-							{item.title}
-						</a>
-					</li>
-				);
-			})
-		}
-	</menu>
+            <menu
+              class="submenu hidden desktop-dropdown"
+              id={`${item.title}-menu-desktop`}
+            >
+              {item.children.map((item) => {
+                return (
+                  <li>
+                    <a href={item.path} class="link">
+                      {item.title}
+                    </a>
+                  </li>
+                );
+              })}
+            </menu>
+          </li>
+        ) : (
+          <li>
+            <a href={item.path} class="link">
+              {item.title}
+            </a>
+          </li>
+        );
+      })
+    }
+  </menu>
 </div>
 
 <style>
-	.hidden {
-		display: none;
-	}
-	.container {
-		display: none;
-	}
+  .hidden {
+    display: none;
+  }
+  .container {
+    display: none;
+  }
 
-	.container > menu {
-		display: flex;
-		flex-direction: row;
-		gap: 1.5em;
-		list-style: none;
+  .container > menu {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5em;
+    list-style: none;
 
-		font-size: 1.25rem;
-		color: var(--ui-);
-	}
+    font-size: 1.25rem;
+    color: var(--ui-);
+  }
 
-	.link {
-		text-decoration: none;
-		color: var(--ui-text-low-contrast);
+  .link {
+    text-decoration: none;
+    color: var(--ui-text-low-contrast);
 
-		display: flex;
-		align-items: center;
-		gap: 0.25em;
-	}
+    display: flex;
+    align-items: center;
+    gap: 0.25em;
+  }
 
-	.link > svg {
-		height: 1em;
-		width: auto;
-	}
+  .link > svg {
+    height: 1em;
+    width: auto;
+  }
 
-	.link:hover, .link:focus {
-		color: var(--primary);
-		font-weight: 600;
-	}
+  .link:hover,
+  .link:focus {
+    color: var(--primary);
+    font-weight: 600;
+  }
 
-	li {
-		position: relative;
-	}
+  li {
+    position: relative;
+  }
 
-	.submenu {
-		padding: var(--spacing-md);
-		width: max-content;
-		position: absolute;
-		top: 48px;
-		background-color: var(--ui-element-bg);
-		box-shadow: var(--shadow-sm);
-		border-radius: var(--radius-sm);
-		z-index: 10;
-	}
+  .submenu {
+    padding: var(--spacing-md);
+    width: max-content;
+    position: absolute;
+    top: 48px;
+    background-color: var(--ui-element-bg);
+    box-shadow: var(--shadow-sm);
+    border-radius: var(--radius-sm);
+    z-index: 20;
+  }
 
-	.submenu > li {
-		list-style: none;
-	}
+  .submenu > li {
+    list-style: none;
+  }
 
-	@media (min-width: 1024px) {
-		.container {
-			display: flex;
-			justify-content: center;
-		}
-	}
+  @media (min-width: 1024px) {
+    .container {
+      display: flex;
+      justify-content: center;
+    }
+  }
 </style>
 
 <script>
-	import "./DesktopDropdown";
+  import "./DesktopDropdown";
 </script>
