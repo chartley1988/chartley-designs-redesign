@@ -1,17 +1,21 @@
 {
-	"title": "Summit Calculator",
-	"description": "A modern calculator with the feel of a notepad.",
-	"picture": "../../assets/images/hero.webp",
-	"content": [
-		{
-			"heading": "The idea.",
-			"text": "Summit Calculator is a line based calculator, where each line is its own calculator. The result from one line can be referenced in any other line, so complex chains of calculations can be made with small modular steps.",
-			"image": "../../assets/images/hero.webp"
-		},
-		{
-			"heading": "Expansions",
-			"text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sagittis risus nec est vehicula hendrerit quis ut elit. Nullam bibendum scelerisque metus sit amet sodales. Aliquam finibus elit ac nisi bibendum, placerat sagittis nulla varius. Morbi enim justo, pulvinar pulvinar neque ac, suscipit eleifend tellus. Phasellus at erat erat. Donec euismod, purus at condimentum congue, orci magna semper ex, in fermentum leo sapien id augue. Aliquam erat volutpat. Sed egestas dolor in posuere iaculis. Sed felis odio, porttitor id ex eu, dictum pulvinar enim. Cras in ante tempor, pharetra turpis in, mollis urna. Aenean at lectus elementum, maximus neque vitae, pretium nunc. ",
-			"image": "../../assets/images/hero.webp"
-		}
-	]
+  "title": "Summit Calculator",
+  "description": "A modern calculator with the feel of a notepad.",
+  "picture": "../../assets/images/summit-screenshot.webp",
+  "content": [
+    {
+      "heading": "The idea.",
+      "text": "Summit Calculator is a line based calculator, where each line is its own calculator. The result from one line can be referenced in any other line, so complex chains of calculations can be made with small modular steps. Made with React, using Vite for bundling and unit testing.",
+      "image": "../../assets/images/summit-screenshot.webp"
+    },
+    {
+      "heading": "How does it work?",
+      "text": "When we want to solve a math equation on paper, we use the standard order of operations. This determines the order in which we deal with operators, exponents, brackets, etc. A computer isn't good at reading this kind of equation, so it needs to be converted to a format that it can deal with. This format is called Reverse Polish Notation, which is essentially a linear stack of instructions the computer can execute. So Summit works by running a parser every time a character is typed.",
+      "image": "../../assets/images/summit_diagram.webp"
+    },
+    {
+      "heading": "What's next?",
+      "text": "Right now, this project functions well as a browser based app. At the moment, it will save the sheet to local storage. But in the future, I plan to build a proper backend for it using a database. This will allow a user to create an account, save multiple sheets, and share them with others. Users will also be able to save other users published sheets to their own collection. So if someone writes a restaurant tip collector you find useful, you'll be able to save it for your own use and edit it if you need."
+    }
+  ]
 }
