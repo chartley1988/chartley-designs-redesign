@@ -57,6 +57,10 @@ const { menuOptions } = Astro.props;
 </div>
 
 <style>
+  header {
+    padding: 0;
+  }
+
   .hidden {
     display: none;
   }
@@ -64,11 +68,17 @@ const { menuOptions } = Astro.props;
     display: none;
   }
 
+  #desktop-menu {
+    height: 100%;
+  }
+
   .container > menu {
     display: flex;
     flex-direction: row;
+    align-items: center;
     gap: 1.5em;
     list-style: none;
+    height: 100%;
 
     font-size: 1.25rem;
     color: var(--ui-);
@@ -96,13 +106,18 @@ const { menuOptions } = Astro.props;
 
   li {
     position: relative;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .submenu {
     padding: var(--spacing-md);
     width: max-content;
     position: absolute;
-    top: 48px;
+    top: var(--header-height);
     background-color: var(--ui-element-bg);
     box-shadow: var(--shadow-sm);
     border-radius: var(--radius-sm);

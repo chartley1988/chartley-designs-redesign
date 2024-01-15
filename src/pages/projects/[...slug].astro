@@ -97,6 +97,8 @@ const { entry } = Astro.props;
       flex-direction: row-reverse;
     }
 
+    /* Please dont ask me to explain this... */
+    /* Ensures that if content doesn't have image, it'll line up on the left */
     section:nth-child(odd) > .section-content:has(.content-text:only-child) {
       flex-direction: row;
     }
