@@ -1,6 +1,7 @@
 header.container {
   background-color: var(--ui-bg-subtle);
   min-height: var(--header-height);
+  padding: 0 var(--spacing-md);
 
   /* Only applicable in mobile */
   display: grid;

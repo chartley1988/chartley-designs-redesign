@@ -9,18 +9,18 @@ import { getCollection, getEntry } from 'astro:content';
 const content = await getCollection('projects');
 
 interface Props {
-	siteName: string;
-	showSiteName?: boolean;
-	logo?: string | undefined;
+  siteName: string;
+  showSiteName?: boolean;
+  logo?: string | undefined;
 }
 
 const { siteName, logo, showSiteName = true } = Astro.props;
 
 type menuOptionsType = {
-	title: string;
-	path: string;
-	badge?: true;
-	children?: menuOptionsType[];
+  title: string;
+  path: string;
+  badge?: true;
+  children?: menuOptionsType[];
 };
 
 const menuOptions: menuOptionsType[] = [

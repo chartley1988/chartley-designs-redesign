@@ -102,18 +102,19 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  --primary: hsl(
-    var(--primary-hue),
-    var(--primary-saturation),
-    var(--primary-lightness)
-  );
-  --accent: hsl(
-    var(--accen-hue),
-    var(--accent-saturation),
-    var(--accent-lightness)
-  );
-
   .no-js {
+    --primary: hsl(
+      var(--primary-hue),
+      var(--primary-saturation),
+      var(--primary-lightness)
+    );
+
+    --accent: hsl(
+      var(--accent-hue),
+      var(--accent-saturation),
+      var(--accent-lightness)
+    );
+
     --nickel-1: #111110;
     --nickel-2: #191918;
     --nickel-3: #222221;

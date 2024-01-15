@@ -1,6 +1,7 @@
 /* UI Colour theme, default is Nickel */
 .light-theme,
-.dark-theme {
+.dark-theme,
+.no-js {
   --ui-bg: var(--nickel-1);
   --ui-bg-subtle: var(--nickel-2);
   --ui-element-bg: var(--nickel-3);
