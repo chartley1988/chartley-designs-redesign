@@ -1,5 +1,17 @@
 {
-	"title": "Card Games Starter",
-	"description": "A starter kit for making card games with pure Javascript.",
-	"picture": "../../assets/images/fence.webp"
+  "title": "Card Games Starter",
+  "description": "A starter kit for making card games with pure Javascript.",
+  "picture": "../../assets/images/fence.webp",
+  "content": [
+    {
+      "image": "../../assets/images/cards_screenshot.webp",
+      "heading": "text",
+      "text": "text"
+    },
+    {
+      "image": "../../assets/images/cards_closeup.webp",
+      "heading": "text",
+      "text": "text"
+    }
+  ]
 }
