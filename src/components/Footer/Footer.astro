@@ -5,19 +5,19 @@ import FooterList from "./FooterList.astro";
 import { getCollection, getEntry } from "astro:content";
 const projectsCollection = await getCollection("projects");
 interface Props {
-	siteName: string;
-	showSiteName?: boolean;
-	logo?: string | undefined;
+  siteName: string;
+  showSiteName?: boolean;
+  logo?: string | undefined;
 }
 
 interface itemList {
-	heading: string;
-	items:
-		| {
-				text: string;
-				url: string;
-		  }[]
-		| never;
+  heading: string;
+  items:
+    | {
+        text: string;
+        url: string;
+      }[]
+    | never;
 }
 
 const { siteName, logo, showSiteName = true } = Astro.props;
@@ -55,24 +55,24 @@ const navigation = {
 };
 
 const socials = {
-	heading: "Social Media",
-	items: [
-		{
-			text: "Formerly Twitter",
-			url: "/",
-			badge: "twitter-x",
-		},
-		{
-			text: "Instagram",
-			url: "/",
-			badge: "ri:instagram-fill",
-		},
-		{
-			text: "Facebook",
-			url: "/",
-			badge: "simple-icons:facebook",
-		},
-	],
+  heading: "Social Media",
+  items: [
+    {
+      text: "Formerly Twitter",
+      url: "/",
+      badge: "twitter-x",
+    },
+    {
+      text: "Instagram",
+      url: "/",
+      badge: "ri:instagram-fill",
+    },
+    {
+      text: "Facebook",
+      url: "/",
+      badge: "simple-icons:facebook",
+    },
+  ],
 };
 ---
 
@@ -106,110 +106,110 @@ const socials = {
 			</div>
 		</div>
 
-		<div class='grid'>
-			<FooterList data={navigation} />
+    <div class="grid">
+      <FooterList data={navigation} />
 
-			<FooterList data={services} />
+      <FooterList data={services} />
 
-			<FooterList data={socials} />
-		</div>
-	</div>
-	<div class='bottom-text'>
-		<hr />
-		 Designed by Chartley
-	</div>
+      <FooterList data={socials} />
+    </div>
+  </div>
+  <div class="bottom-text">
+    <hr />
+     Designed by Chartley
+  </div>
 </footer>
 
 <style>
-	/* Change background of footer here */
-	.footer {
-		background-color: var(--ui-element-bg);
-		padding: 0.75rem;
-		padding-top: var(--spacing-md);
-	}
+  /* Change background of footer here */
+  .footer {
+    background-color: var(--ui-element-bg);
+    padding: 0.75rem;
+    padding-top: var(--spacing-md);
+  }
 
-	.flex-responsive {
-		display: flex;
-		flex-direction: column;
-		gap: var(--spacing-lg);
-	}
+  .flex-responsive {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+  }
 
-	.grid {
-		flex: 1;
-		display: grid;
-		gap: 2rem 1rem;
+  .grid {
+    flex: 1;
+    display: grid;
+    gap: 2rem 1rem;
 
-		grid-template-columns: 1fr;
-		grid-template-rows: auto;
-		grid-auto-flow: row;
-	}
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-auto-flow: row;
+  }
 
-	.logo {
-		display: flex;
-		flex-direction: row;
-		align-items: start;
-		justify-content: start;
-		color: var(--ui-text-low-contrast);
-	}
+  .logo {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: start;
+    color: var(--ui-text-low-contrast);
+  }
 
-	.logo > *:first-child {
-		width: 48px;
-		height: auto;
-		max-height: 100px;
-	}
+  .logo > *:first-child {
+    width: 48px;
+    height: auto;
+    max-height: 100px;
+  }
 
-	.bottom-text {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		margin-top: 1.5rem;
-		margin-bottom: 0.75rem;
-	}
+  .bottom-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
 
-	.bottom-text > hr {
-		border: var(--ui-border-subtle) solid 1px;
-		margin-bottom: var(--spacing-md);
-	}
+  .bottom-text > hr {
+    border: var(--ui-border-subtle) solid 1px;
+    margin-bottom: var(--spacing-md);
+  }
 
-	@media only screen and (min-width: 768px) {
-		.grid {
-			grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-			align-items: start;
-		}
+  @media only screen and (min-width: 768px) {
+    .grid {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      align-items: start;
+    }
 
-		.logo {
-			grid-column: 1/2;
-			flex-direction: column;
-			justify-content: center;
-		}
+    .logo {
+      grid-column: 1/2;
+      flex-direction: column;
+      justify-content: center;
+    }
 
-		.logo > :first-child {
-			height: 100%;
-			width: auto;
-		}
+    .logo > :first-child {
+      height: 100%;
+      width: auto;
+    }
 
-		.flex-responsive {
-			flex-direction: row;
-			align-items: center;
-			gap: var(--spacing-lg);
-		}
-	}
+    .flex-responsive {
+      flex-direction: row;
+      align-items: center;
+      gap: var(--spacing-lg);
+    }
+  }
 
-	@media (min-width: 1024px) {
-		.logo {
-			grid-column: 1/2;
-			flex-direction: column;
-			justify-content: center;
-		}
+  @media (min-width: 1024px) {
+    .logo {
+      grid-column: 1/2;
+      flex-direction: column;
+      justify-content: center;
+    }
 
-		.logo > :first-child {
-			height: 100%;
-			width: auto;
-		}
+    .logo > :first-child {
+      height: 100%;
+      width: auto;
+    }
 
-		.bottom-text {
-			grid-row: -1;
-			justify-self: center;
-		}
-	}
+    .bottom-text {
+      grid-row: -1;
+      justify-self: center;
+    }
+  }
 </style>
