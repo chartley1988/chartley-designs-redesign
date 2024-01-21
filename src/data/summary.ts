@@ -23,11 +23,11 @@ interface summaryType {
 
 // Enter all the info for your site here, used throughout.
 const summary: summaryType = {
-  siteName: "Tamarack Productions",
-  url: "https://chartley-template.vercel.app/",
-  logoURL: "/favicon.svg",
+  siteName: "Chartley Designs",
+  url: "https://www.carsonhartley.com/",
+  logoURL: "../assets/images/pen.svg",
   description:
-    "A company devoted to building beautiful additions to your home. From decks, fences, pergolas, and more. Call now for a free quote!",
+    "A web developer from Alberta, Canada. Devoted to making awesome things.",
   contact: { phone: "123-321-4321", email: "example@gmail.com" },
   social: {
     twitter: { url: "https://www.twitter.com/" },
