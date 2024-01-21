@@ -21,6 +21,9 @@ interface summaryType {
     instagram?: {
       url: string;
     };
+    linkedin?: {
+      url: string;
+    };
   };
 }
 
@@ -35,6 +38,7 @@ const summary: summaryType = {
   social: {
     twitter: { url: "https://twitter.com/chartley1988" },
     youtube: { url: "https://www.youtube.com/watch?v=Gibberish" },
+    linkedin: { url: "www.linkedin.com/in/unique-url" },
   },
 };
 
