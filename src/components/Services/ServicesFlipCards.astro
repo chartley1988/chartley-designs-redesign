@@ -2,8 +2,8 @@
 import { Image, type LocalImageProps } from "astro:assets";
 import FlipCard from "../Cards/FlipCard/FlipCard.astro";
 
-import { getCollection, getEntry } from 'astro:content';
-const content = await getCollection('projects');
+import { getCollection, getEntry } from "astro:content";
+const content = await getCollection("projects");
 
 interface Props {
   cardSize?: {
@@ -25,13 +25,15 @@ const { cardSize = { width: "200px", height: "250px" } } = Astro.props;
           borderRadius="0"
           hoverFlip={true}
         >
-          <div class="card-grid" slot="front">
+          <div class="card-grid" slot="back">
             <div class="content">
-              <h2>{item.data.title}</h2>
+              <a href={`/projects/${item.data.title.toLowerCase()}`}>
+                <h2>{item.data.title}</h2>
+              </a>
               <p>{item.data.description}</p>
             </div>
           </div>
-          <div slot="back">
+          <div slot="front">
             {item.data.picture && (
               <Image
                 src={item.data.picture}
