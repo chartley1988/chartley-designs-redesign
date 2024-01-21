@@ -31,10 +31,9 @@ const summary: summaryType = {
   logoURL: "../assets/images/pen.svg",
   description:
     "A web developer from Alberta, Canada. Devoted to making awesome things.",
-  contact: { phone: "123-321-4321", email: "example@gmail.com" },
+  contact: { email: "info@carsonhartley.com" },
   social: {
-    twitter: { url: "https://www.twitter.com/" },
-    facebook: { url: "https://www.facebook.com/" },
+    twitter: { url: "https://twitter.com/chartley1988" },
     youtube: { url: "https://www.youtube.com/watch?v=Gibberish" },
   },
 };
