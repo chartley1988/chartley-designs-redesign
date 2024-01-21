@@ -37,8 +37,7 @@ const summary: summaryType = {
   contact: { email: "info@carsonhartley.com" },
   social: {
     twitter: { url: "https://twitter.com/chartley1988" },
-    youtube: { url: "https://www.youtube.com/watch?v=Gibberish" },
-    linkedin: { url: "www.linkedin.com/in/unique-url" },
+    linkedin: { url: "www.linkedin.com/in/carson-hartley-00930b269" },
   },
 };
 
