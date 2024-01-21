@@ -1,5 +1,17 @@
 {
-	"title": "Chartley Template",
-	"description": "Transform your patio into a place you want to hang out.",
-	"picture": "../../assets/images/patio.webp"
+  "title": "Chartley Template",
+  "description": "An Astro template for getting off the ground quickly.",
+  "picture": "../../assets/images/template_screenshot.webp",
+  "content": [
+    {
+      "heading": "Purpose of this project",
+      "text": "This template is made with intent of helping to rapidly produce client websites. It takes a data driven approach, where inputting content produces stable implemented components through out the site. For instance, by adding your twitter url to the site summary, it will add links the footer, the contact page, and update the website metadata for SEO. I intend to constantly add new reusable components to this template as I continue with client work.",
+      "image": "../../assets/images/template_screenshot.webp"
+    },
+    {
+      "heading": "How's does it work?",
+      "image": "../../assets/images/template_closeup.webp",
+      "text": "This template is an statically generated site. It only generates code and content at the build step. All content is simply included in the project folder, so it doesn't use any external CMS. It generates a separate page and url for every blog post or feature/service in your content folder, it does this at the build step. So any time you add an entry, you run the build process and redeploy. At the moment, it just uses standard HTML, Javascript, CSS, and markdown."
+    }
+  ]
 }
