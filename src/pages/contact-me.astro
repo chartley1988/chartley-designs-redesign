@@ -27,7 +27,7 @@ const social = summary.social;
             <div class="contact_wrapper">
               <>
                 <strong>Phone:</strong>
-                <div>{contact.phone}</div>
+                <a href={`tel:${contact.phone}`}>{contact.phone}</a>
               </>
             </div>
           )}
@@ -49,7 +49,7 @@ const social = summary.social;
 
           {social.linkedin && (
             <div class="contact_wrapper">
-              <strong>Youtube:</strong>
+              <strong>LinkedIn:</strong>
               <a href={social.linkedin.url}>{social.linkedin.url}</a>
             </div>
           )}
