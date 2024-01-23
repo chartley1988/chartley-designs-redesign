@@ -33,22 +33,12 @@ const summary: summaryType = {
   contact: { email: "info@carsonhartley.com" },
   social: {
     twitter: {
-      url: "https://www.twitter.com/",
+      url: "https://www.twitter.com/chartley1988",
       icon: "twitter-x",
       label: "Twitter",
     },
-    facebook: {
-      url: "https://www.facebook.com/",
-      icon: "facebook",
-      label: "Facebook",
-    },
-    youtube: {
-      url: "https://www.youtube.com/watch?v=Gibberish",
-      icon: "youtube",
-      label: "Youtube",
-    },
     linkedin: {
-      url: "https://www.linkedin.com/in/unique-url",
+      url: "www.linkedin.com/in/carson-hartley-00930b269",
       icon: "linkedin",
       label: "LinkedIn",
     },
