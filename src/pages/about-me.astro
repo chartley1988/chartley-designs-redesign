@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import OurTeam from "../components/AboutUs/OurTeam.astro";
+import Icon from "astro-icon";
 
 import summary from "../data/summary";
 
@@ -72,19 +73,29 @@ const social = summary.social;
       social && (
         <div>
           <h2>Social Media</h2>
-          {social.twitter && (
-            <div class="contact_wrapper">
-              <strong>Twitter:</strong>
-              <a href={social.twitter.url}>{social.twitter.url}</a>
-            </div>
-          )}
-
-          {social.linkedin && (
-            <div class="contact_wrapper">
-              <strong>LinkedIn:</strong>
-              <a href={social.linkedin.url}>{social.linkedin.url}</a>
-            </div>
-          )}
+          <div class="socials_wrapper">
+            {social.linkedin && (
+              <div class="contact_wrapper">
+                <Icon name="linkedin" size={32} />
+                <strong>LinkedIn:</strong>
+                <a href={social.linkedin.url}>{social.linkedin.url}</a>
+              </div>
+            )}
+            {social.twitter && (
+              <div class="contact_wrapper">
+                <Icon name="twitter-x" size={32} />
+                <strong>Twitter:</strong>
+                <a href={social.twitter.url}>{social.twitter.url}</a>
+              </div>
+            )}
+            {social.instagram && (
+              <div class="contact_wrapper">
+                <Icon name="instagram" size={32} />
+                <strong>instagram:</strong>
+                <a href={social.instagram.url}>{social.instagram.url}</a>
+              </div>
+            )}
+          </div>
         </div>
       )
     }
@@ -94,6 +105,12 @@ const social = summary.social;
 <style>
   .endorsement-text {
     font-style: italic;
+  }
+
+  .socials_wrapper {
+    display: flex;
+    gap: var(--spacing-sm);
+    flex-direction: column;
   }
 
   .contact_wrapper {

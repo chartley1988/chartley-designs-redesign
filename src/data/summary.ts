@@ -38,6 +38,7 @@ const summary: summaryType = {
   social: {
     twitter: { url: "https://twitter.com/chartley1988" },
     linkedin: { url: "https://www.linkedin.com/in/carson-hartley-00930b269" },
+    instagram: { url: "https://www.instagram.com/chartley1988/" },
   },
 };
 
