@@ -1,7 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import OurTeam from "../components/AboutUs/OurTeam.astro";
-import Icon from "astro-icon";
+import ContactInfo from "../components/ContactInfo.astro";
+import Socials from "../components/Socials.astro";
 
 import summary from "../data/summary";
 
@@ -51,54 +52,12 @@ const social = summary.social;
       personalized service in [industry].
     </p>
 
-    <!-- Contact Info -->
-    <h2>Contact Us</h2>
-    {
-      contact && (
-        <div>
-          {contact.email && (
-            <div class="contact_wrapper">
-              <>
-                <strong>Email:</strong>
-                <a href={`mailto:${contact.email}`}>{contact.email}</a>
-              </>
-            </div>
-          )}
-        </div>
-      )
-    }
-
-    <!-- Social Media -->
-    {
-      social && (
-        <div>
-          <h2>Social Media</h2>
-          <div class="socials_wrapper">
-            {social.linkedin && (
-              <div class="contact_wrapper">
-                <Icon name="linkedin" size={32} />
-                <strong>LinkedIn:</strong>
-                <a href={social.linkedin.url}>{social.linkedin.url}</a>
-              </div>
-            )}
-            {social.twitter && (
-              <div class="contact_wrapper">
-                <Icon name="twitter-x" size={32} />
-                <strong>Twitter:</strong>
-                <a href={social.twitter.url}>{social.twitter.url}</a>
-              </div>
-            )}
-            {social.instagram && (
-              <div class="contact_wrapper">
-                <Icon name="instagram" size={32} />
-                <strong>instagram:</strong>
-                <a href={social.instagram.url}>{social.instagram.url}</a>
-              </div>
-            )}
-          </div>
-        </div>
-      )
-    }
+    <div class="contact-container">
+      <!-- Contact Info -->
+      <ContactInfo />
+      <!-- Social Media -->
+      <Socials />
+    </div>
   </div>
 </Layout>
 
@@ -123,5 +82,12 @@ const social = summary.social;
   /* This just makes it so they look lined up, more like a grid. */
   .contact_wrapper > strong {
     min-width: 10ch;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    .contact-container {
+      display: flex;
+      gap: var(--spacing-lg);
+    }
   }
 </style>

@@ -9,22 +9,18 @@ interface summaryType {
     email?: string;
   };
   social?: {
-    twitter?: {
-      url: string;
-    };
-    facebook?: {
-      url: string;
-    };
-    youtube?: {
-      url: string;
-    };
-    instagram?: {
-      url: string;
-    };
-    linkedin?: {
-      url: string;
-    };
+    twitter?: socialType;
+    facebook?: socialType;
+    youtube?: socialType;
+    instagram?: socialType;
+    linkedin?: socialType;
   };
+}
+
+interface socialType {
+  url: string;
+  icon: string;
+  label: string;
 }
 
 // Enter all the info for your site here, used throughout.
@@ -36,9 +32,26 @@ const summary: summaryType = {
     "A web developer from Alberta, Canada. Devoted to making awesome things.",
   contact: { email: "info@carsonhartley.com" },
   social: {
-    twitter: { url: "https://twitter.com/chartley1988" },
-    linkedin: { url: "https://www.linkedin.com/in/carson-hartley-00930b269" },
-    instagram: { url: "https://www.instagram.com/chartley1988/" },
+    twitter: {
+      url: "https://www.twitter.com/",
+      icon: "twitter-x",
+      label: "Twitter",
+    },
+    facebook: {
+      url: "https://www.facebook.com/",
+      icon: "facebook",
+      label: "Facebook",
+    },
+    youtube: {
+      url: "https://www.youtube.com/watch?v=Gibberish",
+      icon: "youtube",
+      label: "Youtube",
+    },
+    linkedin: {
+      url: "https://www.linkedin.com/in/unique-url",
+      icon: "linkedin",
+      label: "LinkedIn",
+    },
   },
 };
 

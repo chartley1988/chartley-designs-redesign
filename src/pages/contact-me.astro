@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Icon from "astro-icon";
+import Socials from "../components/Socials.astro";
+import ContactInfo from "../components/ContactInfo.astro";
 import OurTeam from "../components/AboutUs/OurTeam.astro";
 
 import summary from "../data/summary";
@@ -10,63 +11,11 @@ const social = summary.social;
 ---
 
 <Layout title="Welcome to Astro.">
-  <div class="container">
+  <div class="container wrapper">
     <!-- Contact Info -->
-    <h2>Contact Me</h2>
-    {
-      contact && (
-        <div>
-          {contact.email && (
-            <div class="contact_wrapper">
-              <>
-                <strong>Email:</strong>
-                <a href={`mailto:${contact.email}`}>{contact.email}</a>
-              </>
-            </div>
-          )}
-          {contact.phone && (
-            <div class="contact_wrapper">
-              <>
-                <strong>Phone:</strong>
-                <a href={`tel:${contact.phone}`}>{contact.phone}</a>
-              </>
-            </div>
-          )}
-        </div>
-      )
-    }
-
+    <ContactInfo />
     <!-- Social Media -->
-    {
-      social && (
-        <div>
-          <h2>Social Media</h2>
-          <div class="socials_wrapper">
-            {social.linkedin && (
-              <div class="contact_wrapper">
-                <Icon name="linkedin" size={32} />
-                <strong>LinkedIn:</strong>
-                <a href={social.linkedin.url}>{social.linkedin.url}</a>
-              </div>
-            )}
-            {social.twitter && (
-              <div class="contact_wrapper">
-                <Icon name="twitter-x" size={32} />
-                <strong>Twitter:</strong>
-                <a href={social.twitter.url}>{social.twitter.url}</a>
-              </div>
-            )}
-            {social.instagram && (
-              <div class="contact_wrapper">
-                <Icon name="instagram" size={32} />
-                <strong>instagram:</strong>
-                <a href={social.instagram.url}>{social.instagram.url}</a>
-              </div>
-            )}
-          </div>
-        </div>
-      )
-    }
+    <Socials />
   </div>
 </Layout>
 
@@ -92,5 +41,13 @@ const social = summary.social;
   /* This just makes it so they look lined up, more like a grid. */
   .contact_wrapper > strong {
     min-width: 10ch;
+  }
+
+  @media (min-width: 1024px) {
+    .wrapper {
+      display: flex;
+      justify-content: center;
+      gap: var(--spacing-lg);
+    }
   }
 </style>

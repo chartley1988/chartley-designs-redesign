@@ -97,7 +97,12 @@ const socials = {
         ></path>
         <style>
           path {
-            fill: var(--ui-text-low-contrast);
+            fill: currentColor;
+          }
+          @media (prefers-color-scheme: dark) {
+            path {
+              fill: currentColor;
+            }
           }
         </style>
       </svg>
