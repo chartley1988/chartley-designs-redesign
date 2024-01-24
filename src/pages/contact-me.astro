@@ -2,8 +2,6 @@
 import Layout from "../layouts/Layout.astro";
 import Socials from "../components/Socials.astro";
 import ContactInfo from "../components/ContactInfo.astro";
-import OurTeam from "../components/AboutUs/OurTeam.astro";
-
 import summary from "../data/summary";
 
 const contact = summary.contact;
@@ -11,11 +9,16 @@ const social = summary.social;
 ---
 
 <Layout title="Welcome to Astro.">
-  <div class="container wrapper">
-    <!-- Contact Info -->
-    <ContactInfo />
-    <!-- Social Media -->
-    <Socials />
+  <div class="container">
+    <h1>Contact Me</h1>
+    <h2>Social Media & Contact Info</h2>
+    <div class="wrapper">
+      <!-- Contact Info -->
+      <ContactInfo />
+      <!-- Social Media -->
+      <Socials />
+    </div>
+    <h2>Get in Touch</h2>
   </div>
 </Layout>
 
@@ -24,29 +27,10 @@ const social = summary.social;
     font-style: italic;
   }
 
-  .socials_wrapper {
-    display: flex;
-    gap: var(--spacing-sm);
-    flex-direction: column;
-  }
-
-  .contact_wrapper {
-    display: flex;
-    flex-direction: row;
-    gap: var(--spacing-sm);
-    justify-content: start;
-    align-items: center;
-  }
-
-  /* This just makes it so they look lined up, more like a grid. */
-  .contact_wrapper > strong {
-    min-width: 10ch;
-  }
-
   @media (min-width: 1024px) {
     .wrapper {
       display: flex;
-      justify-content: center;
+      justify-content: start;
       gap: var(--spacing-lg);
     }
   }
