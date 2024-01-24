@@ -8,6 +8,7 @@ interface summaryType {
     phone?: string;
     email?: string;
     resume?: string;
+    github?: string;
   };
   social?: {
     twitter?: socialType;
@@ -31,8 +32,11 @@ const summary: summaryType = {
   logoURL: "../assets/images/pen.svg",
   description:
     "A web developer from Alberta, Canada. Devoted to making awesome things.",
-  contact: { email: "info@carsonhartley.com" },
+  contact: {
+    email: "info@carsonhartley.com",
     resume: "/CarsonHartley_Resume2024_Web.pdf",
+    github: "https://github.com/chartley1988",
+  },
   social: {
     twitter: {
       url: "https://www.twitter.com/chartley1988",
@@ -43,6 +47,11 @@ const summary: summaryType = {
       url: "www.linkedin.com/in/carson-hartley-00930b269",
       icon: "linkedin",
       label: "LinkedIn",
+    },
+    instagram: {
+      url: "https://www.instagram.com/chartley1988/",
+      icon: "instagram",
+      label: "Instagram",
     },
   },
 };

@@ -11,7 +11,7 @@ interface contactType {
 ---
 
 <div>
-  {contact && <h2>Contact Info</h2>}
+  {contact && <h3>Contact Info</h3>}
   {
     contact && (
       <div class="contact-flex-column">
@@ -19,7 +19,7 @@ interface contactType {
           <div class="contact_wrapper">
             <>
               <Icon name="mail" size={24} />
-              <a href={`mailto:${contact.email}`}>{contact.email}</a>
+              <a href={`mailto:${contact.email}`}>Email</a>
             </>
           </div>
         )}
@@ -28,6 +28,14 @@ interface contactType {
             <>
               <Icon name="phone" size={24} />
               <a href={`tel:${contact.phone}`}>{contact.phone}</a>
+            </>
+          </div>
+        )}
+        {contact.github && (
+          <div class="contact_wrapper">
+            <>
+              <Icon name="github" size={24} />
+              <a href={contact.github}>Github</a>
             </>
           </div>
         )}
