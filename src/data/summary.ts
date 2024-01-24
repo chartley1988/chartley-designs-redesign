@@ -7,6 +7,7 @@ interface summaryType {
   contact?: {
     phone?: string;
     email?: string;
+    resume?: string;
   };
   social?: {
     twitter?: socialType;
@@ -31,6 +32,7 @@ const summary: summaryType = {
   description:
     "A web developer from Alberta, Canada. Devoted to making awesome things.",
   contact: { email: "info@carsonhartley.com" },
+    resume: "/CarsonHartley_Resume2024_Web.pdf",
   social: {
     twitter: {
       url: "https://www.twitter.com/chartley1988",
