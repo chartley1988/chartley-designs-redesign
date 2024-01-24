@@ -3,56 +3,103 @@ import Layout from "../layouts/Layout.astro";
 import OurTeam from "../components/AboutUs/OurTeam.astro";
 import ContactInfo from "../components/ContactInfo.astro";
 import Socials from "../components/Socials.astro";
-
-import summary from "../data/summary";
-
-const contact = summary.contact;
-const social = summary.social;
+import ProgrammingLanguages from "../components/ProgrammingLanguages.astro";
 ---
 
 <Layout title="Welcome to Astro.">
   <div class="container">
-    <!-- Our Mission -->
-    <h2>Our Mission</h2>
+    <h1>About me</h1>
+    <h2>Who am I?</h2>
     <p>
-      Empowering individuals and communities through [your organization's focus
-      or industry] by delivering innovative solutions, fostering collaboration,
-      and promoting sustainable growth. Our mission is to [specific goal or
-      objective], creating a positive impact on [relevant stakeholders] and
-      contributing to a brighter, more connected future.
+      Greetings! I'm Carson Hartley, aka Chartley. I'm a web developer from
+      Alberta, Canada. I've been self teaching myself programming for the last
+      couple years now, and it has since become my greatest passion.
+    </p><p>
+      I think what I love most about programming is that as a creative
+      endeavour, it is very multidisciplinary. It allows me to work with images,
+      text, logic, and more. The world of technology moves so fast, the
+      opportunity for continuous learning is something that keeps me moving
+      forward. Most of all, I love the collaborative nature of programming,
+      being about to work with others, and build things that solve peoples
+      problem is what I find most rewarding.
     </p>
+
+    <p>
+      I'm currently looking for work, so if you have a website or any other
+      problem to solve, please reach out! I'd also love the opportunity to work
+      in an agency or startup, so reach out if you think we could be a good fit!
+    </p>
+    <br />
+    <strong>Cheers!</strong>
+    <br /><em>~Chartley</em>
 
     <!-- Our Story -->
-    <h2>Our Story</h2>
+    <h2>What's my story?</h2>
     <p>
-      Welcome to [Your Organization Name], where our story is a testament to
-      purpose and perseverance. From our humble beginnings guided by [core
-      values or mission], we've grown into a dynamic force in [industry or
-      purpose]. Our journey is marked by innovation, dedication, and a
-      relentless pursuit of [specific goals or ideals]. At [Your Organization
-      Name], each chapter of our story is defined by the people, the passion,
-      and the progress we make. Join us as we continue to evolve, leaving an
-      indelible mark on [industry or purpose]. This is not just our story; it's
-      an open invitation for you to be part of the narrative at [Your
-      Organization Name].
+      I grew up in Grande Prairie, Alberta. I lived there until I was 19, before
+      moving to Calgary, Alberta for College. There, I studied <em
+        >Environmental Technology</em
+      >. I really ejoyed studying chemistry, math, ecology, and everything else
+      in that program. However, I found that the jobs in the end didn't spark
+      passion with me, I couldn't see myself being heavily involved in Alberta's
+      Oil industry. From there, I pivoted into carpentry instead, building
+      decks, housing construction, and working in a professional carpentry shop.
+    </p>
+    <p>
+      In my early 30s, I moved to Victoria Canada. There, I found work with an
+      arborist company. I think this might have been the funnest job I've ever
+      had, the work was rewarding and the crew was a lot of fun. While living on
+      the island, I also fell in love with rock climbing, which as since been a
+      great passion that I can see being a life long adventure.
+    </p>
+    <p>
+      I've since moved back to the Calgary area, to be closer to family. It's
+      here in the last couple years that I've commited to learning programming
+      while working a part time job in Calgary.
     </p>
 
-    <!-- Our Team -->
-    <h2>Our Team</h2>
-    <OurTeam cardSize={{ width: "200px", height: "300px" }} />
+    <!-- What am I using? -->
+    <h2>What am I using?</h2>
+    <h3>Languages</h3>
+    <p>
+      Most of what I use is centered around web development. As a hobby, I
+      explore other languages for game development or other curious endeavours.
+    </p>
     <ProgrammingLanguages />
 
-    <!-- Endorsements -->
-    <h2>Endorsements</h2>
-    <h3>A high profile client</h3>
-    <p class="endorsement-text">
-      Wholeheartedly recommending [Your Organization Name]! Their expertise in
-      [industry or purpose] is evident in every interaction. From innovative
-      solutions to unwavering commitment to [core values or mission], [Your
-      Organization Name] stands out. A top choice for excellence and
-      personalized service in [industry].
+    <h3>Hardware</h3>
+    <p>
+      For a computer, I'm using an M1 Macbook Air. I use a standard Apple
+      keyboard in desktop environment, as well as trackpad and mouse. I use one
+      23" monitor, with the laptop itself being a second display.
     </p>
 
+    <h3>Software</h3>
+    <h4>Text Editor</h4>
+    <p>
+      I'm using <strong>Neovim</strong> as a text editor. Up until recently, I
+      used VS Code. I'm happy with either editor, but I think using Vim keybinds
+      is both fun and a good investment for the future!
+    </p>
+    <h4>Note Taking</h4>
+    <p>
+      I think taking notes is important, I use <strong>Obsidian</strong> for
+      that. It's been an invaluable resource for collecting links, knowledge,
+      snippets, and more. Most of all I just use it for daily notes for thinking
+      in a more structured way.
+    </p>
+
+    <!-- <!-- Endorsements -->
+    <!-- <h2>Endorsements</h2> -->
+    <!-- <h3>A high profile client</h3> -->
+    <!-- <p class="endorsement-text"> -->
+    <!--   Wholeheartedly recommending [Your Organization Name]! Their expertise in -->
+    <!--   [industry or purpose] is evident in every interaction. From innovative -->
+    <!--   solutions to unwavering commitment to [core values or mission], [Your -->
+    <!--   Organization Name] stands out. A top choice for excellence and -->
+    <!--   personalized service in [industry]. -->
+    <!-- </p> -->
+    <h2>How can you get ahold of me?</h2>
     <div class="contact-container">
       <!-- Contact Info -->
       <ContactInfo />
