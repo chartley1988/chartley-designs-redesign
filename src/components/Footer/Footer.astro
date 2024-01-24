@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import FooterList from "./FooterList.astro";
 import summary from "../../data/summary";
+import Icon from "astro-icon";
 
 import { getCollection, getEntry } from "astro:content";
 const projectsCollection = await getCollection("projects");
@@ -76,6 +77,22 @@ const socials = {
     },
   ],
 };
+
+const contact = {
+  heading: "Contact Info",
+  items: [
+    {
+      text: "Email",
+      url: `mailto:${summary.contact?.email}`,
+      badge: "mail",
+    },
+    {
+      text: "Resume",
+      url: summary.contact?.resume,
+      badge: "resume",
+    },
+  ],
+};
 ---
 
 <footer class="footer">
@@ -118,6 +135,7 @@ const socials = {
       <FooterList data={services} />
 
       <FooterList data={socials} />
+      <FooterList data={contact} />
     </div>
   </div>
   <div class="bottom-text">
