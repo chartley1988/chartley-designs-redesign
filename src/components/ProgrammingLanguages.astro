@@ -1,0 +1,102 @@
+---
+import Icon from "astro-icon";
+
+const languages = [
+  {
+    label: "HTML",
+    description: "Document markup for webpages",
+    icon: "html",
+  },
+  {
+    label: "CSS",
+    description: "Language for styling HTML",
+    icon: "css",
+  },
+  {
+    label: "Javascript",
+    description: "Scripting language for interactive web apps",
+    icon: "javascript",
+  },
+  {
+    label: "Astro",
+    description: "Static generator for making content driven websites",
+    icon: "astro",
+  },
+  {
+    label: "Node",
+    description:
+      "Runtime Environment for JS. Used for local processes and servers",
+    icon: "node",
+  },
+  {
+    label: "React",
+    description: "Javascript library for making dynamic apps",
+    icon: "react",
+  },
+  {
+    label: "Typescript",
+    description: "A superscript of Javascript, adds type safety to Javascript",
+    icon: "typescript",
+  },
+  {
+    label: "Vim",
+    description:
+      "Yeah, I'm calling this a language, it's a text editing language",
+    icon: "vim",
+  },
+  {
+    label: "Git",
+    description: "Not a language, but a version control system",
+    icon: "git",
+  },
+];
+
+// Sets the size of the icons.
+const size = 32;
+---
+
+<ul>
+  {
+    languages.map((lang) => (
+      <li>
+        <div class="icon-label-wrapper">
+          <Icon name={lang.icon} size={size} />
+          <span>
+            <strong>{lang.label}</strong>
+          </span>
+        </div>
+        <em>{lang.description}</em>
+      </li>
+    ))
+  }
+</ul>
+
+<style>
+  ul {
+    margin: var(--spacing-lg) 0 var(--spacing-lg) 0;
+    padding-inline-start: 0px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+  }
+
+  .icon-label-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  li {
+    display: flex;
+    flex-direction: column;
+  }
+
+  em {
+    color: var(--ui-text-low-contrast);
+  }
+
+  strong {
+    color: var(--ui-text-high-contrast);
+  }
+</style>
