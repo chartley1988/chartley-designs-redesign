@@ -1,0 +1,64 @@
+---
+import Button from "./Button.astro";
+---
+
+<form name="contact" method="POST" data-netlify="true">
+  <label for="name">Name</label>
+  <input
+    type="text"
+    name="name"
+    id="form-name"
+    placeholder="Your Name"
+    required
+  />
+
+  <label for="email">Email</label>
+  <input
+    type="email"
+    name="email"
+    id="form-email"
+    placeholder="example@gmail.com"
+    required
+  />
+
+  <label for="body">Message</label>
+  <textarea
+    name="message"
+    id="form-message"
+    placeholder="Enter your message here!"
+    required></textarea>
+
+  <Button colour="primary" hideBorder>
+    <button type="submit">Send Message</button>
+  </Button>
+</form>
+
+<style>
+  form {
+    max-width: min(450px, 95vw);
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  input,
+  textarea {
+    border: none;
+    margin-bottom: 0.5rem;
+  }
+
+  textarea {
+    min-height: 6lh;
+    resize: none;
+  }
+
+  button {
+    color: black;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    input,
+    textarea {
+      background: var(--ui-element-bg);
+    }
+  }
+</style>
