@@ -2,29 +2,38 @@
 import Layout from "../layouts/Layout.astro";
 import Socials from "../components/Socials.astro";
 import ContactInfo from "../components/ContactInfo.astro";
+import ContactForm from "../components/ContactForm.astro";
 import summary from "../data/summary";
 
 const contact = summary.contact;
 const social = summary.social;
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Contact Me">
   <div class="container">
     <h1>Contact Me</h1>
-    <h2>Social Media & Contact Info</h2>
-    <div class="wrapper">
-      <!-- Contact Info -->
-      <ContactInfo />
-      <!-- Social Media -->
-      <Socials />
+    <div class="page-layout">
+      <div class="left">
+        <h2>Social Media & Contact Info</h2>
+        <div class="wrapper">
+          <!-- Contact Info -->
+          <ContactInfo />
+          <!-- Social Media -->
+          <Socials />
+        </div>
+      </div>
+      <div class="right">
+        <h2>Get in Touch</h2>
+        <ContactForm />
+      </div>
     </div>
-    <h2>Get in Touch</h2>
   </div>
 </Layout>
 
 <style>
-  .endorsement-text {
-    font-style: italic;
+  .page-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
 
   @media (min-width: 1024px) {

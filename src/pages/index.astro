@@ -1,24 +1,31 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import HeroPhotoAndText from "../components/Hero/HeroPhotoAndText.astro";
-import Services from "../components/Services/ServicesCards.astro";
 import ServicesFlipCard from "../components/Services/ServicesFlipCards.astro";
+import ContactForm from "../components/ContactForm.astro";
+import ProgrammingLanguages from "../components/ProgrammingLanguages.astro";
 ---
 
-<Layout title='Welcome to Astro.'>
-	<!-- Hero Section -->
-	<HeroPhotoAndText />
-	<ServicesFlipCard />
+<Layout title="Home Page">
+  <!-- Hero Section -->
+  <HeroPhotoAndText />
 
-	<div class='container'></div>
+  <h2 class="container">Things I made...</h2>
+  <ServicesFlipCard />
 
-	<!-- Services -->
-	<div class='services'>
-		<div class='container'></div>
-	</div>
-
-	<!-- Testimonials -->
-	<div class='testimonials'>
-		<div class='container'></div>
-	</div>
+  <div class="container content">
+    <h2>...using these things:</h2>
+    <ProgrammingLanguages coloredIcons={true} />
+    <ContactForm />
+  </div>
 </Layout>
+
+<style>
+  .content {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+</style>
