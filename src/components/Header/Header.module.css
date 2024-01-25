@@ -6,7 +6,7 @@ header.container {
   /* Only applicable in mobile */
   display: grid;
   grid-template-columns: auto auto;
-  grid-template-rows: auto auto;
+  grid-template-rows: auto;
 
   justify-content: space-between;
   align-items: center;

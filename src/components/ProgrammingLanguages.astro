@@ -1,6 +1,10 @@
 ---
 import Icon from "astro-icon";
 
+interface Props {
+  coloredIcons: boolean;
+}
+
 const languages = [
   {
     label: "HTML",
@@ -53,13 +57,17 @@ const languages = [
 
 // Sets the size of the icons.
 const size = 32;
+const { coloredIcons = false } = Astro.props;
 ---
 
 <ul>
   {
     languages.map((lang) => (
       <li>
-        <div class="icon-label-wrapper">
+        <div
+          class="icon-label-wrapper"
+          class:list={["icon-label-wrapper", { coloredIcons }]}
+        >
           <Icon name={lang.icon} size={size} />
           <span>
             <strong>{lang.label}</strong>
@@ -85,6 +93,10 @@ const size = 32;
     flex-direction: row;
     gap: 1rem;
     align-items: center;
+  }
+
+  .coloredIcons > svg {
+    color: var(--primary);
   }
 
   li {

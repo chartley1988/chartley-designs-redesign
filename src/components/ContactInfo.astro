@@ -18,32 +18,40 @@ interface contactType {
         {contact.email && (
           <div class="contact_wrapper">
             <>
-              <Icon name="mail" size={24} />
-              <a href={`mailto:${contact.email}`}>Email</a>
+              <a href={`mailto:${contact.email}`}>
+                <Icon name="mail" size={24} />
+                <strong>Email</strong>
+              </a>
             </>
           </div>
         )}
         {contact.phone && (
           <div class="contact_wrapper">
             <>
-              <Icon name="phone" size={24} />
-              <a href={`tel:${contact.phone}`}>{contact.phone}</a>
+              <a href={`tel:${contact.phone}`}>
+                <Icon name="phone" size={24} />
+                <strong>{contact.phone}</strong>
+              </a>
             </>
           </div>
         )}
         {contact.github && (
           <div class="contact_wrapper">
             <>
-              <Icon name="github" size={24} />
-              <a href={contact.github}>Github</a>
+              <a href={contact.github}>
+                <Icon name="github" size={24} />
+                <strong>Github</strong>
+              </a>
             </>
           </div>
         )}
         {contact.resume && (
           <div class="contact_wrapper">
             <>
-              <Icon name="resume" size={24} />
-              <a href={contact.resume}>My Resume</a>
+              <a href={contact.resume}>
+                <Icon name="resume" size={24} />
+                <strong>My Resume</strong>
+              </a>
             </>
           </div>
         )}
@@ -57,6 +65,17 @@ interface contactType {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+  }
+
+  a {
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacing-sm);
+    align-items: center;
+  }
+
+  a > svg {
+    color: var(--primary);
   }
 
   .contact_wrapper {

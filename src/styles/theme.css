@@ -39,7 +39,7 @@
   --radius-lg: 1.5rem;
 
   /* BUTTON SETTINGS */
-  --button-radius: 0;
+  --button-radius: var(--radius-sm);
   --button-border: 2px;
 
   /* LAYOUT VARIABLES */
