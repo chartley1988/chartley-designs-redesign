@@ -1,5 +1,5 @@
 ---
-import { getCollection, getEntry } from "astro:content";
+import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import { Image } from "astro:assets";
 
@@ -68,13 +68,15 @@ const { page, pageNumber, lastPage, cardSize } = Astro.props;
           return (
             <li>
               {post.data.thumbnail && (
-                <Image
-                  src={post.data.thumbnail?.image}
-                  alt={post.data.thumbnail?.alt}
-                  class="thumbnail"
-                  width={cardSize * 1.5}
-                  height={cardSize * 1.5}
-                />
+                <a href={`/blog/${post.data.url}`}>
+                  <Image
+                    src={post.data.thumbnail?.image}
+                    alt={post.data.thumbnail?.alt}
+                    class="thumbnail"
+                    width={cardSize * 1.5}
+                    height={cardSize * 1.5}
+                  />
+                </a>
               )}
               <div class="post-content">
                 <a href={`/blog/${post.data.url}`}>{post.data.title}</a>
@@ -166,8 +168,8 @@ const { page, pageNumber, lastPage, cardSize } = Astro.props;
   }
 
   .thumbnail {
-    object-fit: cover;
-    width: minmax(var(--size), 100%);
+    object-fit: contain;
+    width: var(--size);
     height: auto;
     aspect-ratio: 1/1;
   }
@@ -185,7 +187,8 @@ const { page, pageNumber, lastPage, cardSize } = Astro.props;
 
   @media only screen and (min-width: 640px) {
     ul {
-      grid-template-columns: repeat(auto-fit, minmax(var(--size), 1fr));
+      grid-template-columns: repeat(auto-fit, var(--size));
+      justify-content: start;
     }
   }
 </style>
