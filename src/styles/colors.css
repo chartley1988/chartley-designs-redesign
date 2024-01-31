@@ -33,6 +33,8 @@
     var(--accent-lightness)
   );
 
+  --primary-text: hsl(90 34% 46% / 1);
+
   --nickel-1: #fdfdfc;
   --nickel-2: #f9f9f8;
   --nickel-3: #f1f0ef;
@@ -62,6 +64,12 @@
 
 .dark-theme {
   --primary: hsl(
+    var(--primary-hue),
+    var(--primary-saturation),
+    var(--primary-lightness)
+  );
+
+  --primary-text: hsl(
     var(--primary-hue),
     var(--primary-saturation),
     var(--primary-lightness)

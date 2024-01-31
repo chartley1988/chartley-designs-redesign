@@ -29,7 +29,7 @@ const { frontmatter } = Astro.props;
 
 <style is:global>
   h1.markdown {
-    color: var(--primary);
+    color: var(--primary-text);
     margin-bottom: 0;
   }
 
@@ -42,5 +42,10 @@ const { frontmatter } = Astro.props;
   pre {
     padding: 1rem;
     border-radius: var(--radius-sm);
+    max-width: var(--content-width);
+  }
+
+  code {
+    max-width: var(--content-width);
   }
 </style>
