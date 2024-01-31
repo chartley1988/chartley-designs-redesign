@@ -44,4 +44,5 @@
 
   /* LAYOUT VARIABLES */
   --header-height: 96px;
+  --content-width: 80ch;
 }
