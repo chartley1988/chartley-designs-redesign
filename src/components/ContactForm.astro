@@ -3,7 +3,7 @@ import Button from "./Button.astro";
 ---
 
 <form name="contact" method="POST" data-netlify="true">
-  <label for="name">Name</label>
+  <label for="form-name">Name</label>
   <input
     type="text"
     name="name"
@@ -12,7 +12,7 @@ import Button from "./Button.astro";
     required
   />
 
-  <label for="email">Email</label>
+  <label for="form-email">Email</label>
   <input
     type="email"
     name="email"
@@ -21,7 +21,7 @@ import Button from "./Button.astro";
     required
   />
 
-  <label for="body">Message</label>
+  <label for="form-message">Message</label>
   <textarea
     name="message"
     id="form-message"
@@ -42,14 +42,20 @@ import Button from "./Button.astro";
 
   input,
   textarea {
-    border: none;
+    padding: 0.25rem;
+    border: 2px var(--ui-border) solid;
     margin-bottom: 0.5rem;
     color: var(--ui-text-low-contrast);
+  }
+
+  label {
+    color: var(--ui-text-high-contrast);
   }
 
   textarea {
     min-height: 6lh;
     resize: none;
+    margin-bottom: 1rem;
   }
 
   button {
