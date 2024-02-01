@@ -12,6 +12,7 @@
   "dependencies": {
     "@astrojs/check": "^0.3.1",
     "@astrojs/mdx": "^2.0.3",
+    "@fontsource/inder": "^5.0.8",
     "@fontsource/poppins": "^5.0.8",
     "@fontsource/pt-sans": "^5.0.8",
     "astro": "^4.0.1",
