@@ -1,5 +1,7 @@
 {
-	"title": "Personal Site",
-	"description": "Give your yard or deck the shade it needs.",
-	"picture": "../../assets/images/pergola.webp"
+  "title": "Personal Site",
+  "description": "My personal site and portfolio. Based off my template.",
+  "picture": "../../assets/images/cd_logo.svg",
+  "url": "https://carsonhartley.com/",
+  "githubURL": "https://github.com/chartley1988/chartley-designs-redesign"
 }

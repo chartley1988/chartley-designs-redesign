@@ -2,6 +2,8 @@
   "title": "Chartley Template",
   "description": "An Astro template for getting off the ground quickly.",
   "picture": "../../assets/images/template_screenshot.webp",
+  "url": "https://chartley-template.vercel.app/",
+  "githubURL": "https://github.com/chartley1988/chartley-template",
   "content": [
     {
       "heading": "Purpose of this project",

@@ -2,6 +2,8 @@
   "title": "Summit Calculator",
   "description": "A modern calculator with the feel of a notepad.",
   "picture": "../../assets/images/summit-screenshot.webp",
+  "url": "https://chartley1988.github.io/chartleys-calculator/",
+  "githubURL": "https://github.com/chartley1988/chartleys-calculator",
   "content": [
     {
       "heading": "The idea.",

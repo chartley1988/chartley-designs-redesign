@@ -2,6 +2,8 @@
   "title": "Card Games Starter",
   "description": "A starter kit for making card games with pure Javascript.",
   "picture": "../../assets/images/cards_closeup.webp",
+  "url": "https://daver067.github.io/card-games/",
+  "githubURL": "https://github.com/Daver067/card-games",
   "content": [
     {
       "heading": "About this project",

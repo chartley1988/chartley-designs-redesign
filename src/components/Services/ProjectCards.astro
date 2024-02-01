@@ -1,0 +1,125 @@
+---
+import { Image } from "astro:assets";
+import Card from "../Cards/Card.astro";
+import Button from "../Button.astro";
+
+import { getCollection } from "astro:content";
+const projects = await getCollection("projects");
+
+interface Props {
+  cardSize?: {
+    width: string | "none";
+    height: string | "none";
+  };
+}
+
+const { cardSize = { width: "300px", height: "250px" } } = Astro.props;
+---
+
+<!-- Creates a grid of cards -->
+<div class="container feature-grid">
+  {
+    projects.map((entry) => {
+      const project = entry.data;
+      return (
+        <Card width={cardSize.width} height={cardSize.height}>
+          <div class="wrapper">
+            <div class="contents">
+              <h2>{project.title}</h2>
+              <p>{project.description}</p>
+              <div class="buttons">
+                <Button colour="primary" hideBorder>
+                  <a href={project.url} style="color: black;">
+                    Try it
+                  </a>
+                </Button>
+                <Button colour="primary" hideBackground>
+                  <a href={project.githubURL}>Github</a>
+                </Button>
+              </div>
+            </div>
+            {project.picture && (
+              <Image
+                src={project.picture}
+                width={500}
+                height={500}
+                alt="Project screenshot"
+              />
+            )}
+          </div>
+        </Card>
+      );
+    })
+  }
+</div>
+
+<style define:vars={{ width: cardSize.width, height: cardSize.height }}>
+  h2 {
+    font-size: 1.25rem;
+    margin-top: 0;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+
+  img {
+    object-fit: cover;
+    height: 100%;
+    width: 120px;
+  }
+
+  .wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .feature-grid {
+    margin-top: 5vh;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(var(--width), 1fr));
+    grid-template-rows: var(--height);
+    grid-auto-flow: row;
+    grid-auto-rows: var(--height);
+    gap: 2rem;
+  }
+
+  .card-grid {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr;
+  }
+
+  .card-grid > * {
+    grid-column: 1/2;
+  }
+
+  .contents {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contents > p {
+    flex: 1;
+  }
+
+  .buttons {
+    display: flex;
+    gap: var(--spacing-sm);
+    justify-content: stretch;
+  }
+
+  @media (min-width: 1024px) {
+    img {
+      object-fit: cover;
+      height: 100%;
+      width: auto;
+      aspect-ratio: 1/1;
+    }
+  }
+</style>
