@@ -10,61 +10,53 @@ const {} = Astro.props;
 <h1>Mood Board</h1>
 
 <section>
-	<h2>Buttons</h2>
-	<div class='buttons'>
-		<Button colour='primary'><a href="" class="buttons">Primary</a></Button>
-		<Button
-			colour='accent'
-			hideBorder={true}
-		>
-			Accent
-		</Button>
-		<Button
-			colour='none'
-			hideBackground={true}
-		>
-			<button>Colourless</button>
-		</Button>
-	</div>
+  <h2>Buttons</h2>
+  <div class="buttons">
+    <Button colour="primary"><a href="" class="buttons">Primary</a></Button>
+    <Button colour="accent" hideBorder={true}>Accent</Button>
+    <Button colour="none" hideBackground={true}>
+      <button>Colourless</button>
+    </Button>
+  </div>
 </section>
 
 <section>
-	<h2>Cards</h2>
-	<div class='flex-row'>
-		<Card>Hello! This is a card</Card>
-		<Card>
-			<strong>A Card with a title</strong>
-			<hr />
-			 Hello! This is a card
-		</Card>
-	</div>
+  <h2>Cards</h2>
+  <div class="flex-row">
+    <Card width="250px" height="250px">Hello! This is a card</Card>
+    <Card width="250px" height="250px">
+      <strong>A Card with a title</strong>
+      <hr />
+       Hello! This is a card
+    </Card>
+  </div>
 </section>
 
 <section>
-	<h2>Paragraph</h2>
-	<p>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
-		volutpat, ipsum vel finibus egestas, libero risus rhoncus tellus, a
-		pretium risus urna vitae purus. Fusce et quam eget augue interdum
-		accumsan. Maecenas sapien dui, gravida ut pretium ac, pretium ac odio.
-		Fusce dictum, ante eu fringilla iaculis, risus turpis dapibus purus, ut
-		fermentum ipsum dui vel dui. Aliquam finibus, odio in finibus faucibus,
-		orci quam mattis leo, sed blandit nunc justo et enim.
-	</p>
+  <h2>Paragraph</h2>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
+    volutpat, ipsum vel finibus egestas, libero risus rhoncus tellus, a pretium
+    risus urna vitae purus. Fusce et quam eget augue interdum accumsan. Maecenas
+    sapien dui, gravida ut pretium ac, pretium ac odio. Fusce dictum, ante eu
+    fringilla iaculis, risus turpis dapibus purus, ut fermentum ipsum dui vel
+    dui. Aliquam finibus, odio in finibus faucibus, orci quam mattis leo, sed
+    blandit nunc justo et enim.
+  </p>
 </section>
 
 <style>
-	section {
-		margin: var(--spacing-lg) 0;
-	}
+  section {
+    margin: var(--spacing-lg) 0;
+  }
 
-	div.buttons {
-		display: flex;
-		gap: var(--spacing-sm);
-	}
+  div.buttons {
+    display: flex;
+    gap: var(--spacing-sm);
+  }
 
-	a.buttons {
-		text-decoration: none;
-		color: var(--ui-text-high-contrast);
-	}
+  a.buttons {
+    text-decoration: none;
+    color: var(--ui-text-high-contrast);
+  }
 </style>
