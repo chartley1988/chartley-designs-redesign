@@ -1,6 +1,6 @@
 ---
 title: The various super powers of Astro
-url: "published"
+url: "astro-super-powers"
 date: 2024-01-28
 summary: "Astro will probably make your life easier, so long as your life involves building a website. Here's how"
 thumbnail:
