@@ -100,13 +100,13 @@ const menuOptions: menuOptionsType[] = [
 <style>
   header {
     background-color: var(--ui-bg-subtle);
-    height: var(--header-height);
+    min-height: var(--header-height);
     padding: 0 var(--spacing-md);
 
     /* Only applicable in mobile */
     display: grid;
     grid-template-columns: auto auto;
-    grid-template-rows: auto;
+    grid-template-rows: max(var(--header-height)) auto;
 
     justify-content: space-between;
     align-items: center;
@@ -122,6 +122,7 @@ const menuOptions: menuOptionsType[] = [
   /* Only applicable in mobile */
   grid-column: 1/2;
   grid-row: 1/2;
+  height: var(--header-height);
 
   display: flex;
   flex-direction: row;
