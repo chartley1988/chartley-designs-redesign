@@ -4,8 +4,8 @@ import DesktopNav from "./DesktopNav/DesktopNav.astro";
 import MobileNav from "./MobileNav/MobileNav.astro";
 import Button from "../Button.astro";
 
-import { getCollection, getEntry } from 'astro:content';
-const content = await getCollection('projects');
+import { getCollection, getEntry } from "astro:content";
+const content = await getCollection("projects");
 
 interface Props {
   siteName: string;
@@ -23,52 +23,70 @@ type menuOptionsType = {
 };
 
 const menuOptions: menuOptionsType[] = [
-	{
-		title: "Home",
-		path: "/",
-	},
-	{
-		title: 'Blog',
-		path: `/blog/page-1`
-	},
-	{
-		title: "Projects",
-		path: "/",
-		children: content.map(entry => {
-			return {
-				title: entry.data.title,
-				path: `/projects/${entry.data.title.toLowerCase()}`,
-			}
-		})
-	},
-	{
-		title: "About",
-		path: "/",
-		children: [
-			{
-				title: "About me",
-				path: "/about-me",
-			},
-			{
-				title: "Contact me",
-				path: "/contact-me",
-			},
-		],
-	},
+  {
+    title: "Home",
+    path: "/",
+  },
+  {
+    title: "Blog",
+    path: `/blog/page-1`,
+  },
+  {
+    title: "Projects",
+    path: "/",
+    children: content.map((entry) => {
+      return {
+        title: entry.data.title,
+        path: `/projects/${entry.data.title.toLowerCase()}`,
+      };
+    }),
+  },
+  {
+    title: "About",
+    path: "/",
+    children: [
+      {
+        title: "About me",
+        path: "/about-me",
+      },
+      {
+        title: "Contact me",
+        path: "/contact-me",
+      },
+    ],
+  },
 ];
 ---
 
-<header class={style.container}>
-  <a class={style.letterhead} href="/">
+<header >
+  <a class="letterhead" href="/">
     {
-      logo != undefined && (
-        <>
-          <img src={logo} alt="" />
-          {showSiteName && <div>{siteName}</div>}
-        </>
-      )
-    }
-    {logo == undefined && <div>{siteName}</div>}
+			logo != undefined && (
+				<>
+				<svg
+				fill='#000000'
+				width='800px'
+				height='800px'
+				viewBox='0 0 32 32'
+				version='1.1'
+				xmlns='http://www.w3.org/2000/svg'
+			>
+				<title>pen</title>
+				<path
+					d='M6.625 18.044l-3.263 9.936 4.361-4.377c-0.3-0.757-0.226-2.050 0.387-2.662 0.821-0.822 2.173-0.803 2.994 0.019s0.866 2.198 0.045 3.020c-0.625 0.625-1.998 0.661-2.764 0.337l-4.323 4.335 9.701-3.408 3.533-6.364-4.304-4.246-6.367 3.41zM22.981 3.349c0 0-6.011 6.010-6.938 6.938-0.929 0.928-1.414 4.419-1.414 4.419l2.695 2.696c0 0 3.403-0.486 4.375-1.459s6.938-6.938 6.938-6.938l-5.656-5.656z'
+					
+				></path>
+				<style>
+					path {
+						fill: var(--ui-text-low-contrast);
+					}
+				</style>
+			</svg>
+					{showSiteName && <div>{siteName}</div>}
+				</>
+			)
+		}
+		{logo == undefined && <div>{siteName}</div>}
   </a>
   <DesktopNav menuOptions={menuOptions} />
   <div class="mobile-hidden">
@@ -80,19 +98,85 @@ const menuOptions: menuOptionsType[] = [
 </header>
 
 <style>
-	.contact {
-		color: black;
-		text-decoration: none;
-	}
+  header {
+    background-color: var(--ui-bg-subtle);
+    height: var(--header-height);
+    padding: 0 var(--spacing-md);
 
-	svg {
-		width: 48px;
-		height: auto;
-	}
+    /* Only applicable in mobile */
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+
+    justify-content: space-between;
+    align-items: center;
+
+    box-shadow: var(--shadow-md);
+    /* border-bottom: var(--ui-border-subtle) solid 2px; */
+  }
+
+.letterhead {
+  /* Sets the font-size and icon size for letterhead */
+  --lh-size: 1.25rem;
+
+  /* Only applicable in mobile */
+  grid-column: 1/2;
+  grid-row: 1/2;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.25em;
+
+  font-size: var(--lh-size);
+  font-family: var(--font-headings);
+  color: var(--ui-text-high-contrast);
+
+  word-break: keep-all;
+  width: max-content;
+  text-decoration: none;
+}
+
+.letterhead:hover {
+  text-decoration: none;
+}
+
+a.letterhead > svg {
+  height: var(--lh-size);
+  width: auto;
+}
+
+.letterhead > div {
+  min-width: max-content;
+}
+
+@media (min-width: 640px) {
+  .letterhead {
+      --lh-size: 1.75rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .letterhead {
+    --lh-size: 2rem;
+  }
+
+  header {
+    display: flex;
+    flex-direction: row;
+  }
+
+  header > a > svg {
+    flex-shrink: 0;
+  }
+
+}
+  .contact {
+    color: black;
+    text-decoration: none;
+  }
+
 
   @media only screen and (min-width: 1024px) {
-      header {
-      height: var(--header-height);
-    }
   }
 </style>
