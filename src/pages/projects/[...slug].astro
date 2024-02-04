@@ -2,6 +2,8 @@
 import { getCollection, getEntry } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import { Image } from "astro:assets";
+import Button from "../../components/Button.astro";
+import Icon from "astro-icon";
 
 // 1. Generate a new path for every collection entry
 export async function getStaticPaths() {
@@ -21,6 +23,18 @@ const { entry } = Astro.props;
     <p class="description">
       {entry.data.description}
     </p>
+
+    <div class="project-links">
+      <Button colour="primary" hideBorder>
+        <a href={entry.data.url} style="color: black;"> Try it!</a>
+      </Button>
+      <Button colour="primary" hideBackground>
+        <a href={entry.data.githubURL} class="link">
+          <Icon name="github" />
+           Github
+        </a>
+      </Button>
+    </div>
 
     <div class="content">
       {
@@ -58,6 +72,24 @@ const { entry } = Astro.props;
     gap: var(--spacing-md);
   }
   .content-text {
+  }
+
+  .project-links {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .link {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .link > svg {
+    width: 1.25em;
+    height: 1.25em;
   }
 
   .content-image {

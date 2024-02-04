@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import Card from "../Cards/Card.astro";
 import Button from "../Button.astro";
+import Icon from "astro-icon";
 
 import { getCollection } from "astro:content";
 const projects = await getCollection("projects");
@@ -34,7 +35,10 @@ const { cardSize = { width: "300px", height: "250px" } } = Astro.props;
                   </a>
                 </Button>
                 <Button colour="primary" hideBackground>
-                  <a href={project.githubURL}>Github</a>
+                  <a href={project.githubURL} class="gh-link">
+                    <Icon name="github" />
+                    Github
+                  </a>
                 </Button>
               </div>
             </div>
@@ -61,6 +65,18 @@ const { cardSize = { width: "300px", height: "250px" } } = Astro.props;
 
   a:hover {
     text-decoration: none;
+  }
+
+  .gh-link {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .gh-link > svg {
+    width: 1.25em;
+    height: 1.25em;
   }
 
   img {
@@ -125,7 +141,7 @@ const { cardSize = { width: "300px", height: "250px" } } = Astro.props;
     img {
       object-fit: cover;
       height: 100%;
-      width: auto;
+      width: 180px;
       aspect-ratio: 1/1;
     }
   }
