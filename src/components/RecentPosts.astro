@@ -1,0 +1,103 @@
+---
+// This component outputs the last 3 blog posts. Right now it currently goes by
+// date, but in the future it may function based on last edited post.
+
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+const posts = await getCollection("blog")
+  .then((posts) =>
+    posts.sort((a, b) => {
+      return +b.data.date - +a.data.date;
+    }),
+  )
+  .then((posts) => {
+    return posts.slice(0, 3);
+  });
+
+const cardSize = 200;
+---
+
+<div class="container">
+  <!-- List of Blog Posts -->
+  <ul>
+    {
+      posts.map((post) => {
+        return (
+          <li>
+            {post.data.thumbnail && (
+              <a href={`/blog/${post.data.url}`}>
+                <Image
+                  src={post.data.thumbnail?.image}
+                  alt={post.data.thumbnail?.alt}
+                  class="thumbnail"
+                  width={cardSize * 1.5}
+                  height={cardSize * 1.5}
+                />
+              </a>
+            )}
+            <div class="post-content">
+              <a href={`/blog/${post.data.url}`}>{post.data.title}</a>
+              <p>{post.data.date.toISOString().slice(0, 10)}</p>
+            </div>
+          </li>
+        );
+      })
+    }
+  </ul>
+</div>
+
+<style define:vars={{ size: `${cardSize}px` }}>
+  ul {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: var(--size);
+    gap: 2rem;
+    padding: 0;
+    justify-items: center;
+  }
+
+  li {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    max-width: calc(var(--size) * 1.3);
+
+    background-color: var(--ui-element-bg);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+  }
+
+  h2 {
+    margin: 0;
+    color: var(--ui-text-high-contrast);
+    font-size: 1.2rem;
+    line-height: 1.3rem;
+  }
+
+  a {
+    text-decoration: none;
+    flex: 1;
+    color: var(--ui-text-high-contrast);
+    font-weight: 700;
+  }
+
+  a:hover {
+    color: var(--primary);
+  }
+
+  .thumbnail {
+    object-fit: contain;
+    width: var(--size);
+    height: auto;
+    aspect-ratio: 1/1;
+  }
+
+  @media only screen and (min-width: 640px) {
+    ul {
+      grid-template-columns: repeat(auto-fit, var(--size));
+      justify-content: start;
+    }
+  }
+</style>

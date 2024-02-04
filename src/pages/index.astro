@@ -4,21 +4,32 @@ import HeroPhotoAndText from "../components/Hero/HeroPhotoAndText.astro";
 import ContactForm from "../components/ContactForm.astro";
 import ProgrammingLanguages from "../components/ProgrammingLanguages.astro";
 import ProjectCards from "../components/Services/ProjectCards.astro";
+import RecentPosts from "../components/RecentPosts.astro";
 ---
 
 <Layout title="Home Page">
   <!-- Hero Section -->
   <HeroPhotoAndText />
 
-  <h2 class="container">Things I made...</h2>
+  <section>
+    <h2 class="container">Things I made...</h2>
+    <ProjectCards />
+  </section>
 
-  <ProjectCards />
-
-  <div class="container content">
+  <section class="container">
     <h2>...using these things:</h2>
     <ProgrammingLanguages coloredIcons={true} />
+  </section>
+
+  <section class="container">
+    <h2>Recent Posts</h2>
+    <RecentPosts />
+  </section>
+
+  <section class="container">
+    <h2>Get in touch!</h2>
     <ContactForm />
-  </div>
+  </section>
 </Layout>
 
 <style>
@@ -28,5 +39,9 @@ import ProjectCards from "../components/Services/ProjectCards.astro";
     display: flex;
     flex-direction: column;
     gap: 2rem;
+  }
+
+  section {
+    margin-top: 3rem;
   }
 </style>
