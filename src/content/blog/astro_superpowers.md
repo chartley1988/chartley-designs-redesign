@@ -91,10 +91,10 @@ const { Content } = await entry.render();
 
 ## Styling
 
-When it comes to adding styles to your website, Astro is pretty unopinionated.
+When it comes to adding styles to your website, Astro is not opinionated.
 You can stick with traditional style sheets, CSS modules, pre-processors,
 tailwind, or whatever you want. One useful thing Astro does though is give you
-locally scoped styles by default. This means you can keep your main stylsheet
+locally scoped styles by default. This means you can keep your main style-sheet
 nice and lean, but each page or component can have their own styles that won't
 interfere with anything else on the site.
 
