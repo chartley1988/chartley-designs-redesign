@@ -34,6 +34,8 @@
   );
 
   --primary-text: hsl(90 34% 46% / 1);
+  --gradient-text: linear-gradient(45deg, black, var(--primary-text));
+  --gradient-text-hover: linear-gradient(135deg, black, var(--accent));
 
   --nickel-1: #fdfdfc;
   --nickel-2: #f9f9f8;
@@ -80,6 +82,9 @@
     var(--accent-saturation),
     var(--accent-lightness)
   );
+
+  --gradient-text: linear-gradient(45deg, white, var(--primary-text));
+  --gradient-text-hover: linear-gradient(135deg, white, var(--accent));
 
   --nickel-1: #111110;
   --nickel-2: #191918;
