@@ -28,12 +28,16 @@ const { entry } = Astro.props;
       <Button colour="primary" hideBorder>
         <a href={entry.data.url} style="color: black;"> Try it!</a>
       </Button>
-      <Button colour="primary" hideBackground>
-        <a href={entry.data.githubURL} class="link">
-          <Icon name="github" />
-           Github
-        </a>
-      </Button>
+      {
+        entry.data.githubURL && (
+          <Button colour="primary" hideBackground>
+            <a href={entry.data.githubURL} class="link">
+              <Icon name="github" />
+              Github
+            </a>
+          </Button>
+        )
+      }
     </div>
 
     <div class="content">
