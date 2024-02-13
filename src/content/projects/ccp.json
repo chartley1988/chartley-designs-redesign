@@ -1,0 +1,12 @@
+{
+  "title": "Connor's Custom Plumbing",
+  "description": "A commercial website for Victoria,BC Plumbing Company",
+  "picture": "../../assets/images/ccp_logo.png",
+  "url": "https://connorscustomplumbing.ca/",
+  "content": [
+    {
+      "heading": "Summary",
+      "text": "A custom website for a Victoria, BC based plumbing service. Made with Astro and Tailwind."
+    }
+  ]
+}
