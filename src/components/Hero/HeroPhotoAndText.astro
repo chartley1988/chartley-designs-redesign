@@ -1,91 +1,97 @@
 ---
-import { Image } from "astro:assets";
-import hero from "../../assets/images/chartley_photo.webp";
-import Button from "../Button.astro";
-import background from "../../assets/images/hero_background.webp";
+import { Image } from "astro:assets"
+import hero from "../../assets/images/chartley_photo.webp"
+import Button from "../Button.astro"
+import background from "../../assets/images/hero_background.webp"
 ---
 
 <div class="hero background">
-  <div class="container">
-    <div>
-      <p class="text1">
-        Bringing <strong>elegance</strong> to your website.
-      </p>
-      <div class="flex-row">
-        <Button colour="primary" hideBackground>
-          <a href="/contact-me">Get in touch</a>
-        </Button>
-      </div>
+    <div class="container">
+        <div>
+            <p class="text1">
+                Bringing back some <strong>style</strong> to the web.
+            </p>
+            <div class="flex-row">
+                <Button colour="primary" hideBackground>
+                    <a href="/contact-me">Get in touch</a>
+                </Button>
+            </div>
+        </div>
+        <Image
+            src={hero}
+            alt="Hero Image"
+            class="hero"
+            width={500}
+            height={500}
+        />
     </div>
-    <Image src={hero} alt="Hero Image" class="hero" width={500} height={500} />
-  </div>
 </div>
 
 <style define:vars={{ backgroundURL: `url(${background.src})` }}>
-  .hero {
-    color: var(--ui-text-low-contrast);
-  }
-
-  .background {
-    background-color: var(--ui-bg);
-  }
-
-  strong {
-    color: hsl(
-      var(--primary-hue),
-      var(--primary-saturation),
-      calc(var(--primary-lightness) * 0.7)
-    );
-  }
-
-  .hero > div {
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: start;
-    gap: var(--spacing-md);
-  }
-
-  a {
-    text-decoration: none;
-    font-weight: 900;
-    font-size: 1.25rem;
-    color: var(--ui-text-high-contrast);
-    height: 100%;
-    width: 100%;
-
-    display: flex;
-    align-items: center;
-  }
-
-  img.hero {
-    width: 100%;
-    height: auto;
-    box-shadow: var(--shadow-md);
-  }
-
-  .text1 {
-    font-size: 1.75rem;
-    line-height: 1.9rem;
-    margin: 1rem 0;
-  }
-
-  @media only screen and (min-width: 1024px) {
     .hero {
-      background-color: var(--ui-element-bg);
+        color: var(--ui-text-low-contrast);
+    }
+
+    .background {
+        background-color: var(--ui-bg);
+    }
+
+    strong {
+        color: hsl(
+            var(--primary-hue),
+            var(--primary-saturation),
+            calc(var(--primary-lightness) * 0.7)
+        );
     }
 
     .hero > div {
-      flex-direction: row;
-      align-items: center;
-      padding: 2rem;
-      border-radius: 2rem;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: start;
+        gap: var(--spacing-md);
+    }
+
+    a {
+        text-decoration: none;
+        font-weight: 900;
+        font-size: 1.25rem;
+        color: var(--ui-text-high-contrast);
+        height: 100%;
+        width: 100%;
+
+        display: flex;
+        align-items: center;
     }
 
     img.hero {
-      width: 450px;
-      height: auto;
-      box-shadow: none;
-      clip-path: circle(35% at 50% 50%);
+        width: 100%;
+        height: auto;
+        box-shadow: var(--shadow-md);
     }
-  }
+
+    .text1 {
+        font-size: 1.75rem;
+        line-height: 1.9rem;
+        margin: 1rem 0;
+    }
+
+    @media only screen and (min-width: 1024px) {
+        .hero {
+            background-color: var(--ui-element-bg);
+        }
+
+        .hero > div {
+            flex-direction: row;
+            align-items: center;
+            padding: 2rem;
+            border-radius: 2rem;
+        }
+
+        img.hero {
+            width: 450px;
+            height: auto;
+            box-shadow: none;
+            clip-path: circle(35% at 50% 50%);
+        }
+    }
 </style>
