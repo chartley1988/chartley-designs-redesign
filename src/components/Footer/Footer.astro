@@ -1,256 +1,256 @@
 ---
-import { Image } from "astro:assets";
-import FooterList from "./FooterList.astro";
-import summary from "../../data/summary";
-import Icon from "astro-icon";
+import { Image } from "astro:assets"
+import FooterList from "./FooterList.astro"
+import summary from "../../data/summary"
+import Icon from "astro-icon"
 
-import { getCollection, getEntry } from "astro:content";
-const projectsCollection = await getCollection("projects");
+import { getCollection, getEntry } from "astro:content"
+const projectsCollection = await getCollection("projects")
 interface Props {
-  siteName: string;
-  showSiteName?: boolean;
-  logo?: string | undefined;
+	siteName: string
+	showSiteName?: boolean
+	logo?: string | undefined
 }
 
 interface itemList {
-  heading: string;
-  items:
-    | {
-        text: string;
-        url: string;
-      }[]
-    | never;
+	heading: string
+	items:
+		| {
+				text: string
+				url: string
+		  }[]
+		| never
 }
 
-const { siteName, logo, showSiteName = true } = Astro.props;
+const { siteName, logo, showSiteName = true } = Astro.props
 
 const services: itemList = {
-  heading: "Projects",
-  items: projectsCollection.map((item) => {
-    return {
-      text: item.data.title,
-      url: `/projects/${item.data.title.toLowerCase()}`,
-    };
-  }),
-};
+	heading: "Projects",
+	items: projectsCollection.map((item) => {
+		return {
+			text: item.data.title,
+			url: `/projects/${item.data.title.toLowerCase()}`,
+		}
+	}),
+}
 
 const navigation = {
-  heading: "Navigation",
-  items: [
-    {
-      text: "Home",
-      url: "/",
-    },
-    {
-      text: "Blog",
-      url: "/blog/page-1",
-    },
-    {
-      text: "About me",
-      url: "/about-me",
-    },
-    {
-      text: "Contact me",
-      url: "/contact-me",
-    },
-  ],
-};
+	heading: "Navigation",
+	items: [
+		{
+			text: "Home",
+			url: "/",
+		},
+		{
+			text: "Blog",
+			url: "/blog/page-1",
+		},
+		{
+			text: "About me",
+			url: "/about-me",
+		},
+		{
+			text: "Contact me",
+			url: "/contact-me",
+		},
+	],
+}
 
 // Delete any entries of this array you're not using
 const socials = {
-  heading: "Social Media",
-  items: [
-    {
-      text: "Twitter",
-      url: summary.social?.twitter?.url,
-      badge: "twitter-x",
-    },
-    {
-      text: "Instagram",
-      url: summary.social?.instagram?.url || "/",
-      badge: "ri:instagram-fill",
-    },
-    {
-      text: "LinkedIn",
-      url: summary.social?.linkedin?.url || "/",
-      badge: "linkedin",
-    },
-  ],
-};
+	heading: "Social Media",
+	items: [
+		{
+			text: "Twitter",
+			url: summary.social?.twitter?.url,
+			badge: "twitter-x",
+		},
+		{
+			text: "Instagram",
+			url: summary.social?.instagram?.url || "/",
+			badge: "ri:instagram-fill",
+		},
+		{
+			text: "LinkedIn",
+			url: summary.social?.linkedin?.url || "/",
+			badge: "linkedin",
+		},
+	],
+}
 
 const contact = {
-  heading: "Contact Info",
-  items: [
-    {
-      text: "Email",
-      url: `mailto:${summary.contact?.email}`,
-      badge: "mail",
-    },
-    {
-      text: "Resume",
-      url: summary.contact?.resume,
-      badge: "resume",
-    },
-    {
-      text: "Github",
-      url: summary.contact?.github,
-      badge: "github",
-    },
-  ],
-};
+	heading: "Contact Info",
+	items: [
+		{
+			text: "Email",
+			url: `mailto:${summary.contact?.email}`,
+			badge: "mail",
+		},
+		{
+			text: "Resume",
+			url: summary.contact?.resume,
+			badge: "resume",
+		},
+		{
+			text: "Github",
+			url: summary.contact?.github,
+			badge: "github",
+		},
+	],
+}
 ---
 
-<footer class="footer">
-  <div class="flex-responsive container">
-    <div class="logo">
-      <!--?xml version="1.0" encoding="utf-8"?-->
-      <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
-      <svg
-        fill="#000000"
-        width="800px"
-        height="800px"
-        viewBox="0 0 32 32"
-        version="1.1"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <title>pen</title>
-        <path
-          d="M6.625 18.044l-3.263 9.936 4.361-4.377c-0.3-0.757-0.226-2.050 0.387-2.662 0.821-0.822 2.173-0.803 2.994 0.019s0.866 2.198 0.045 3.020c-0.625 0.625-1.998 0.661-2.764 0.337l-4.323 4.335 9.701-3.408 3.533-6.364-4.304-4.246-6.367 3.41zM22.981 3.349c0 0-6.011 6.010-6.938 6.938-0.929 0.928-1.414 4.419-1.414 4.419l2.695 2.696c0 0 3.403-0.486 4.375-1.459s6.938-6.938 6.938-6.938l-5.656-5.656z"
-        ></path>
-        <style>
-          path {
-            fill: currentColor;
-          }
-          @media (prefers-color-scheme: dark) {
-            path {
-              fill: currentColor;
-            }
-          }
-        </style>
-      </svg>
-      <div class="flex-column">
-        {showSiteName && <div>{siteName}</div>}
-        <p>Copyright 2023 Chartley Designs</p>
-      </div>
-    </div>
+<footer class='footer'>
+	<div class='flex-responsive container'>
+		<div class='logo'>
+			<!--?xml version="1.0" encoding="utf-8"?-->
+			<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+			<svg
+				fill='#000000'
+				width='800px'
+				height='800px'
+				viewBox='0 0 32 32'
+				version='1.1'
+				xmlns='http://www.w3.org/2000/svg'
+			>
+				<title>pen</title>
+				<path
+					d='M6.625 18.044l-3.263 9.936 4.361-4.377c-0.3-0.757-0.226-2.050 0.387-2.662 0.821-0.822 2.173-0.803 2.994 0.019s0.866 2.198 0.045 3.020c-0.625 0.625-1.998 0.661-2.764 0.337l-4.323 4.335 9.701-3.408 3.533-6.364-4.304-4.246-6.367 3.41zM22.981 3.349c0 0-6.011 6.010-6.938 6.938-0.929 0.928-1.414 4.419-1.414 4.419l2.695 2.696c0 0 3.403-0.486 4.375-1.459s6.938-6.938 6.938-6.938l-5.656-5.656z'
+				></path>
+				<style>
+					path {
+						fill: currentColor;
+					}
+					@media (prefers-color-scheme: dark) {
+						path {
+							fill: currentColor;
+						}
+					}
+				</style>
+			</svg>
+			<div class='flex-column'>
+				{showSiteName && <div>{siteName}</div>}
+				<p>Copyright 2025 Chartley Designs</p>
+			</div>
+		</div>
 
-    <div class="grid">
-      <FooterList data={navigation} />
+		<div class='grid'>
+			<FooterList data={navigation} />
 
-      <FooterList data={services} />
+			<FooterList data={services} />
 
-      <FooterList data={socials} />
-      <FooterList data={contact} />
-    </div>
-  </div>
-  <div class="bottom-text">
-    <hr />
-     Designed by Chartley
-  </div>
+			<FooterList data={socials} />
+			<FooterList data={contact} />
+		</div>
+	</div>
+	<div class='bottom-text'>
+		<hr />
+		 Designed by Chartley
+	</div>
 </footer>
 
 <style>
-  /* Change background of footer here */
-  .footer {
-    background-color: var(--ui-element-bg);
-    padding: 0.75rem;
-    padding-top: var(--spacing-md);
-  }
+	/* Change background of footer here */
+	.footer {
+		background-color: var(--ui-element-bg);
+		padding: 0.75rem;
+		padding-top: var(--spacing-md);
+	}
 
-  .flex-responsive {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-lg);
-  }
+	.flex-responsive {
+		display: flex;
+		flex-direction: column;
+		gap: var(--spacing-lg);
+	}
 
-  .grid {
-    flex: 1;
-    display: grid;
-    gap: 2rem 1rem;
+	.grid {
+		flex: 1;
+		display: grid;
+		gap: 2rem 1rem;
 
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    grid-auto-flow: row;
-  }
+		grid-template-columns: 1fr;
+		grid-template-rows: auto;
+		grid-auto-flow: row;
+	}
 
-  .logo {
-    display: flex;
-    flex-direction: row;
-    align-items: start;
-    justify-content: start;
-    color: var(--ui-text-low-contrast);
-  }
+	.logo {
+		display: flex;
+		flex-direction: row;
+		align-items: start;
+		justify-content: start;
+		color: var(--ui-text-low-contrast);
+	}
 
-  .logo > *:first-child {
-    width: 48px;
-    height: auto;
-    max-height: 100px;
-  }
+	.logo > *:first-child {
+		width: 48px;
+		height: auto;
+		max-height: 100px;
+	}
 
-  .bottom-text {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 1.5rem;
-    margin-bottom: 0.75rem;
-  }
+	.bottom-text {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-top: 1.5rem;
+		margin-bottom: 0.75rem;
+	}
 
-  .bottom-text > hr {
-    border: var(--ui-border-subtle) solid 1px;
-    margin-bottom: var(--spacing-md);
-  }
+	.bottom-text > hr {
+		border: var(--ui-border-subtle) solid 1px;
+		margin-bottom: var(--spacing-md);
+	}
 
-  @media only screen and (min-width: 768px) {
-    .grid {
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      align-items: start;
-    }
+	@media only screen and (min-width: 768px) {
+		.grid {
+			grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+			align-items: start;
+		}
 
-    .logo {
-      grid-column: 1/2;
-      flex-direction: column;
-      justify-content: center;
-    }
+		.logo {
+			grid-column: 1/2;
+			flex-direction: column;
+			justify-content: center;
+		}
 
-    .logo > :first-child {
-      height: 100%;
-      width: auto;
-    }
+		.logo > :first-child {
+			height: 100%;
+			width: auto;
+		}
 
-    .flex-responsive {
-      flex-direction: row;
-      align-items: center;
-      gap: var(--spacing-lg);
-    }
-  }
+		.flex-responsive {
+			flex-direction: row;
+			align-items: center;
+			gap: var(--spacing-lg);
+		}
+	}
 
-  @media (min-width: 1024px) {
-    .logo {
-      grid-column: 1/2;
-      flex-direction: column;
-      justify-content: center;
-    }
+	@media (min-width: 1024px) {
+		.logo {
+			grid-column: 1/2;
+			flex-direction: column;
+			justify-content: center;
+		}
 
-    .logo > :first-child {
-      height: 100%;
-      width: auto;
-    }
+		.logo > :first-child {
+			height: 100%;
+			width: auto;
+		}
 
-    .bottom-text {
-      grid-row: -1;
-      justify-self: center;
-    }
-  }
+		.bottom-text {
+			grid-row: -1;
+			justify-self: center;
+		}
+	}
 
-  @media (prefers-color-scheme: dark) {
-    footer {
-      border-top: 2px solid;
-      border-image-slice: 1;
-      border-image-source: linear-gradient(
-        to left,
-        var(--primary),
-        var(--accent)
-      );
-    }
-  }
+	@media (prefers-color-scheme: dark) {
+		footer {
+			border-top: 2px solid;
+			border-image-slice: 1;
+			border-image-source: linear-gradient(
+				to left,
+				var(--primary),
+				var(--accent)
+			);
+		}
+	}
 </style>
