@@ -1,23 +1,23 @@
 {
-  "title": "Card Games Starter",
-  "description": "A starter kit for making card games with pure Javascript.",
-  "picture": "../../assets/images/cards_closeup.webp",
-  "url": "https://daver067.github.io/card-games/",
-  "githubURL": "https://github.com/Daver067/card-games",
-  "content": [
-    {
-      "heading": "About this project",
-      "text": "The purpose of this project was to create a javascript foundation for creating browser based card games. The included functions will create a standard deck of playing cards, flip cards, shuffle decks, move cards, and more. Included as a demo is classic Solitaire. In the future, I'd like to add more functionality for prototyping UI, expanding customizable options for how the cards look, and more functions."
-    },
-    {
-      "image": "../../assets/images/cards_screenshot.webp",
-      "heading": "What did I learn from this project?",
-      "text": "This project is special to me for two reasons. First, it was my first real project without guidance. I was very new to javascript, and certainly had no experience with bundlers or splitting code. Secondly, it was my first project that I've collaborated with someone. Many lessons were learned on the best practices of coordinating the shared efforts of creating this thing, but it sure was fun!"
-    },
-    {
-      "image": "../../assets/images/cards_closeup.webp",
-      "heading": "What were some challenges with this project?",
-      "text": "Probably one of the main challenges was just how new to programming I was. I didn't know how promises worked, or how to scope styles locally in CSS. So I ran in circles trying to get async functions working and trying avoid styles conflicting. That being said, I think some really cool things were achieved in this project. I'm very happy with the animations, it was very tricky moving the cards around the table smoothly, or animating the card flips. Also of note, there is only one image file used in this project, and it's the texture on the background. The cards themselves are done entirely through CSS using flex, grid, shadows, and fonts. This makes them very customizable!"
-    }
-  ]
+    "title": "Card Factory",
+    "description": "A starter kit for making card games with pure Javascript.",
+    "picture": "../../assets/images/cards_closeup.webp",
+    "url": "https://card-factory.info",
+    "githubURL": "https://github.com/Daver067/cards-npm-package",
+    "content": [
+        {
+            "heading": "About this project",
+            "text": "The purpose of this project was to create a javascript foundation for creating browser based card games. The included functions will create a standard deck of playing cards, flip cards, shuffle decks, move cards, and more. Included as a demo is classic Solitaire. In the future, I'd like to add more functionality for prototyping UI, expanding customizable options for how the cards look, and more functions."
+        },
+        {
+            "image": "../../assets/images/cards_screenshot.webp",
+            "heading": "What did I learn from this project?",
+            "text": "This project is special to me for two reasons. First, it was my first real project without guidance. I was very new to javascript, and certainly had no experience with bundlers or splitting code. Secondly, it was my first project that I've collaborated with someone. Many lessons were learned on the best practices of coordinating the shared efforts of creating this thing, but it sure was fun!"
+        },
+        {
+            "image": "../../assets/images/cards_closeup.webp",
+            "heading": "What were some challenges with this project?",
+            "text": "Probably one of the main challenges was just how new to programming I was. I didn't know how promises worked, or how to scope styles locally in CSS. So I ran in circles trying to get async functions working and trying avoid styles conflicting. That being said, I think some really cool things were achieved in this project. I'm very happy with the animations, it was very tricky moving the cards around the table smoothly, or animating the card flips. Also of note, there is only one image file used in this project, and it's the texture on the background. The cards themselves are done entirely through CSS using flex, grid, shadows, and fonts. This makes them very customizable!"
+        }
+    ]
 }

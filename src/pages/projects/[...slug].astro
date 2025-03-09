@@ -1,136 +1,153 @@
 ---
-import { getCollection, getEntry } from "astro:content";
-import Layout from "../../layouts/Layout.astro";
-import { Image } from "astro:assets";
-import Button from "../../components/Button.astro";
-import Icon from "astro-icon";
+import { getCollection, getEntry } from "astro:content"
+import Layout from "../../layouts/Layout.astro"
+import { Image } from "astro:assets"
+import Button from "../../components/Button.astro"
+import Icon from "astro-icon"
 
 // 1. Generate a new path for every collection entry
 export async function getStaticPaths() {
-  const projects = await getCollection("projects");
-  return projects.map((entry) => ({
-    params: { slug: entry.data.title.toLowerCase() },
-    props: { entry },
-  }));
+	const projects = await getCollection("projects")
+	return projects.map((entry) => ({
+		params: { slug: entry.data.title.toLowerCase() },
+		props: { entry },
+	}))
 }
 // 2. For your template, you can get the entry directly from the prop
-const { entry } = Astro.props;
+const { entry } = Astro.props
 ---
 
 <Layout title={`${entry.data.title}`}>
-  <div class="container">
-    <h1>{entry.data.title}</h1>
-    <p class="description">
-      {entry.data.description}
-    </p>
+	<div class='container'>
+		<h1>{entry.data.title}</h1>
+		<p class='description'>
+			{entry.data.description}
+		</p>
 
-    <div class="project-links">
-      <Button colour="primary" hideBorder>
-        <a href={entry.data.url} style="color: black;"> Try it!</a>
-      </Button>
-      {
-        entry.data.githubURL && (
-          <Button colour="primary" hideBackground>
-            <a href={entry.data.githubURL} class="link">
-              <Icon name="github" />
-              Github
-            </a>
-          </Button>
-        )
-      }
-    </div>
+		<div class='project-links'>
+			<Button
+				colour='primary'
+				hideBorder
+			>
+				<a
+					href={entry.data.url}
+					target='_blank'
+					style='color: black;'
+				>
+					Try it!</a
+				>
+			</Button>
+			{
+				entry.data.githubURL && (
+					<Button
+						colour='primary'
+						hideBackground
+					>
+						<a
+							href={entry.data.githubURL}
+							target='_blank'
+							class='link'
+						>
+							<Icon name='github' />
+							Github
+						</a>
+					</Button>
+				)
+			}
+		</div>
 
-    <div class="content">
-      {
-        entry.data.content &&
-          entry.data.content.map((content) => {
-            return (
-              <section>
-                {content.heading && <h2>{content.heading}</h2>}
-                <div class="section-content">
-                  <p class="content-text">{content.text}</p>
-                  {content.image && (
-                    <Image
-                      src={content.image}
-                      alt={"Whatever"}
-                      class="content-image"
-                    />
-                  )}
-                </div>
-              </section>
-            );
-          })
-      }
-    </div>
-  </div>
+		<div class='content'>
+			{
+				entry.data.content &&
+					entry.data.content.map((content) => {
+						return (
+							<section>
+								{content.heading && <h2>{content.heading}</h2>}
+								<div class='section-content'>
+									<p class='content-text'>{content.text}</p>
+									{content.image && (
+										<Image
+											src={content.image}
+											alt={"Whatever"}
+											class='content-image'
+										/>
+									)}
+								</div>
+							</section>
+						)
+					})
+			}
+		</div>
+	</div>
 </Layout>
 
 <style>
-  section {
-    margin: var(--spacing-lg) 0;
-  }
-  .section-content {
-    display: flex;
-    flex-direction: column;
+	section {
+		margin: var(--spacing-lg) 0;
+	}
+	.section-content {
+		display: flex;
+		flex-direction: column;
 
-    gap: var(--spacing-md);
-  }
-  .content-text {
-  }
+		gap: var(--spacing-md);
+	}
+	.content-text {
+	}
 
-  .project-links {
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
-  }
+	.project-links {
+		display: flex;
+		flex-direction: row;
+		gap: 1rem;
+	}
 
-  .link {
-    display: flex;
-    flex-direction: row;
-    gap: 0.5rem;
-    align-items: center;
-  }
+	.link {
+		display: flex;
+		flex-direction: row;
+		gap: 0.5rem;
+		align-items: center;
+	}
 
-  .link > svg {
-    width: 1.25em;
-    height: 1.25em;
-  }
+	.link > svg {
+		width: 1.25em;
+		height: 1.25em;
+	}
 
-  .content-image {
-    height: auto;
-    object-fit: cover;
-  }
+	.content-image {
+		height: auto;
+		object-fit: cover;
+	}
 
-  @media (min-width: 1024px) {
-    h1 {
-      margin-bottom: 0;
-      color: var(--ui-text-high-contrast);
-    }
+	@media (min-width: 1024px) {
+		h1 {
+			margin-bottom: 0;
+			color: var(--ui-text-high-contrast);
+		}
 
-    .description {
-      font-size: 1.7rem;
-      padding-top: 0;
-      padding-left: 1rem;
-      line-height: 1.7;
-      color: var(--ui-text-low-contrast);
-    }
+		.description {
+			font-size: 1.7rem;
+			padding-top: 0;
+			padding-left: 1rem;
+			line-height: 1.7;
+			color: var(--ui-text-low-contrast);
+		}
 
-    .section-content {
-      flex-direction: row;
-    }
+		.section-content {
+			flex-direction: row;
+		}
 
-    .content-image {
-      width: 40%;
-    }
+		.content-image {
+			width: 40%;
+		}
 
-    section:nth-child(odd) > .section-content {
-      flex-direction: row-reverse;
-    }
+		section:nth-child(odd) > .section-content {
+			flex-direction: row-reverse;
+		}
 
-    /* Please dont ask me to explain this... */
-    /* Ensures that if content doesn't have image, it'll line up on the left */
-    section:nth-child(odd) > .section-content:has(.content-text:only-child) {
-      flex-direction: row;
-    }
-  }
+		/* Please dont ask me to explain this... */
+		/* Ensures that if content doesn't have image, it'll line up on the left */
+		section:nth-child(odd)
+			> .section-content:has(.content-text:only-child) {
+			flex-direction: row;
+		}
+	}
 </style>
